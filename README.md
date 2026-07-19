@@ -1,1 +1,1 @@
-# -seedsync
+# seedsync
