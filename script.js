@@ -1,8 +1,60 @@
-const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);
-const mobile=$('#mobileNav');$('#menuOpen').addEventListener('click',()=>mobile.classList.toggle('open'));
-$$('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>mobile.classList.remove('open')));
-const modal=$('#searchModal');$('#searchOpen').addEventListener('click',()=>{modal.classList.add('active');setTimeout(()=>$('#searchInput').focus(),50)});$('#searchClose').addEventListener('click',()=>modal.classList.remove('active'));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('active')});
-let count=Number(localStorage.getItem('mallCartCount')||0);$('#cartCount').textContent=count;
-$$('.add').forEach(btn=>btn.addEventListener('click',()=>{count++;localStorage.setItem('mallCartCount',count);$('#cartCount').textContent=count;const t=$('#toast');t.textContent=`${btn.dataset.name}을(를) 장바구니에 담았습니다.`;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}));
-const header=$('#header');window.addEventListener('scroll',()=>header.style.boxShadow=scrollY>20?'0 3px 20px #0000000d':'none');
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
+const header = $('#header');
+const mobileNav = $('#mobileNav');
+const menuOpen = $('#menuOpen');
+const searchModal = $('#searchModal');
+const searchOpen = $('#searchOpen');
+const searchClose = $('#searchClose');
+const searchInput = $('#searchInput');
+
+menuOpen?.addEventListener('click', () => {
+  mobileNav?.classList.toggle('open');
+});
+
+$$('.mobile-nav a').forEach((link) => {
+  link.addEventListener('click', () => mobileNav?.classList.remove('open'));
+});
+
+const openSearch = () => {
+  searchModal?.classList.add('active');
+  setTimeout(() => searchInput?.focus(), 60);
+};
+
+const closeSearch = () => {
+  searchModal?.classList.remove('active');
+};
+
+searchOpen?.addEventListener('click', openSearch);
+searchClose?.addEventListener('click', closeSearch);
+
+$$('.search-hints a').forEach((link) => {
+  link.addEventListener('click', closeSearch);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeSearch();
+});
+
+searchInput?.addEventListener('keydown', (event) => {
+  if (event.key !== 'Enter') return;
+
+  const keyword = searchInput.value.trim().toLowerCase();
+  let target = '#products';
+
+  if (/(센서|관수|가습|환기|기술|자동)/.test(keyword)) target = '#technology';
+  if (/(인삼|더덕|고추|가지|아스파라거스|비트|셀러리|작물)/.test(keyword)) target = '#applications';
+  if (/(서비스|a\/s|as|설치|상담|도입)/.test(keyword)) target = '#service';
+  if (/(문의|견적|가격)/.test(keyword)) target = '#support';
+
+  closeSearch();
+  document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+  if (!header) return;
+  header.style.boxShadow = window.scrollY > 20
+    ? '0 8px 28px rgba(21, 50, 74, 0.08)'
+    : 'none';
+});
