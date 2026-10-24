@@ -1,3 +1,8 @@
+const paletteGuard = document.createElement('link');
+paletteGuard.rel = 'stylesheet';
+paletteGuard.href = 'palette-guard.css';
+document.head.appendChild(paletteGuard);
+
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -15,7 +20,6 @@ menuOpen?.addEventListener('click', () => setMenuState(!mobileNav?.classList.con
 $$('.mobile-nav a').forEach((link) => link.addEventListener('click', () => setMenuState(false)));
 window.addEventListener('scroll', () => header?.classList.toggle('scrolled', window.scrollY > 24), { passive: true });
 
-// Reveal motion
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -26,7 +30,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 $$('.reveal-item, .reveal-section').forEach((el) => revealObserver.observe(el));
 
-// Hero machine subtle parallax
 const heroScene = $('.hero-machine-scene');
 const heroMachine = $('#heroMachine');
 heroScene?.addEventListener('pointermove', (event) => {
@@ -40,7 +43,6 @@ heroScene?.addEventListener('pointerleave', () => {
   if (heroMachine) heroMachine.style.transform = 'translate(-50%,-47%)';
 });
 
-// Value tabs
 $$('.value-tab').forEach((tab) => {
   tab.addEventListener('click', () => {
     const key = tab.dataset.value;
@@ -51,7 +53,6 @@ $$('.value-tab').forEach((tab) => {
   });
 });
 
-// Accordion
 $$('.accordion-list details').forEach((detail) => {
   const syncIcons = () => {
     $$('.accordion-list details').forEach((item) => {
@@ -70,7 +71,6 @@ $$('.accordion-list details').forEach((detail) => {
   });
 });
 
-// Technology flow animation
 const technologyVisual = $('#technologyVisual');
 let technologyTimer = null;
 const startTechnologyFlow = () => {
@@ -94,7 +94,6 @@ if (technologyVisual) {
   techObserver.observe(technologyVisual);
 }
 
-// Drawer
 const drawer = $('#productDrawer');
 const drawerBackdrop = $('#drawerBackdrop');
 const drawerClose = $('#drawerClose');
@@ -153,7 +152,6 @@ document.addEventListener('keydown', (event) => {
 });
 drawerCta?.addEventListener('click', closeDrawer);
 
-// Crop carousels
 $$('[data-carousel]').forEach((carousel) => {
   const track = $('.crop-track', carousel);
   const cards = $$('.crop-card', carousel);
@@ -184,7 +182,6 @@ window.addEventListener('resize', () => {
   $$('[data-carousel] .crop-track').forEach((track) => track.dispatchEvent(new Event('scroll')));
 });
 
-// Consultation form UI only
 const consultForm = $('#consultForm');
 const formStatus = $('#formStatus');
 consultForm?.addEventListener('submit', (event) => {
