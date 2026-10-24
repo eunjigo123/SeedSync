@@ -9,6 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .crop-photo{height:285px;margin-top:12px;overflow:hidden;border-bottom:1px solid #86B7C5;background:#F5F7F4}
+    .crop-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .28s ease}
+    .spectrum-card:hover .crop-photo img{transform:scale(1.025)}
+    .spectrum-card small{margin-top:18px;text-transform:lowercase}
+    @media(max-width:760px){.crop-photo{height:235px}}
+  </style>
 </head>
 <body>
 <header class="site-header" id="header">
@@ -55,7 +62,7 @@
       <a class="big-product equipment-product" href="#equipment-line">
         <div class="big-product-top"><span>02 / EQUIPMENT LINE</span><b>기기 구매</b></div>
         <div class="equipment-graphic"><div class="eq-roof"></div><div class="eq-body"><i></i><i></i><i></i></div></div>
-        <div class="big-product-copy"><h3>작물에 맞춘<br>자동화 장비.</h3><p>더덕 · 꽈리고추 · 청양고추 · 가지 · 시금치 · 콩류 · 생강</p><strong>Explore equipment →</strong></div>
+        <div class="big-product-copy"><h3>작물에 맞춘<br>자동화 장비.</h3><p>더덕 · 꽈리고추 · 청양고추 · 가지 · 시금치 · 콩 · 생강</p><strong>Explore equipment →</strong></div>
       </a>
     </div>
   </section>
@@ -105,28 +112,28 @@
     <div class="lineup-heading"><p class="eyebrow">PRODUCT SPECTRUM</p><h2>작물별 라인업.</h2></div>
 
     <div class="spectrum-carousel" id="seedling-line" data-carousel data-category="묘 구매">
-      <div class="carousel-head"><div><span>01 / SEEDLING LINE</span><h3>묘 구매</h3></div><div class="carousel-controls"><button class="carousel-arrow prev">←</button><button class="carousel-arrow next">→</button></div></div>
+      <div class="carousel-head"><div><span>01 / SEEDLING LINE</span><h3>묘 구매</h3></div><div class="carousel-controls"><button class="carousel-arrow prev" type="button" aria-label="이전 묘">←</button><button class="carousel-arrow next" type="button" aria-label="다음 묘">→</button></div></div>
       <div class="spectrum-track">
-        <a class="spectrum-card" href="#contact" data-product="인삼 묘"><span>01</span><div class="crop-name">인삼</div><small>GINSENG</small><h4>인삼</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="비트 묘"><span>02</span><div class="crop-name">비트</div><small>BEET</small><h4>비트</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="아스파라거스 묘"><span>03</span><div class="crop-name">아스파라거스</div><small>ASPARAGUS</small><h4>아스파라거스</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="더덕 묘"><span>04</span><div class="crop-name">더덕</div><small>DEODEOK</small><h4>더덕</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="셀러리 묘"><span>05</span><div class="crop-name">셀러리</div><small>CELERY</small><h4>셀러리</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="우엉 묘"><span>06</span><div class="crop-name">우엉</div><small>BURDOCK</small><h4>우엉</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="스테비아 묘"><span>07</span><div class="crop-name">스테비아</div><small>STEVIA</small><h4>스테비아</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="인삼 묘"><span>01</span><div class="crop-photo"><img src="ginseng.png" alt="인삼" loading="lazy"></div><small>ginseng</small><h4>인삼</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="비트 묘"><span>02</span><div class="crop-photo"><img src="beet.png" alt="비트" loading="lazy"></div><small>beet</small><h4>비트</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="아스파라거스 묘"><span>03</span><div class="crop-photo"><img src="asparagus.png" alt="아스파라거스" loading="lazy"></div><small>asparagus</small><h4>아스파라거스</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="더덕 묘"><span>04</span><div class="crop-photo"><img src="deodeok.png" alt="더덕" loading="lazy"></div><small>deodeok</small><h4>더덕</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="셀러리 묘"><span>05</span><div class="crop-photo"><img src="celery.png" alt="셀러리" loading="lazy"></div><small>celery</small><h4>셀러리</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="우엉 묘"><span>06</span><div class="crop-photo"><img src="burdock.png" alt="우엉" loading="lazy"></div><small>burdock</small><h4>우엉</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="스테비아 묘"><span>07</span><div class="crop-photo"><img src="stevia.png" alt="스테비아" loading="lazy"></div><small>stevia</small><h4>스테비아</h4></a>
       </div><div class="carousel-footer"><div class="carousel-progress"><i></i></div><span class="carousel-count">01 / 07</span></div>
     </div>
 
     <div class="spectrum-carousel" id="equipment-line" data-carousel data-category="기기 구매">
-      <div class="carousel-head"><div><span>02 / EQUIPMENT LINE</span><h3>기기 구매</h3></div><div class="carousel-controls"><button class="carousel-arrow prev">←</button><button class="carousel-arrow next">→</button></div></div>
+      <div class="carousel-head"><div><span>02 / EQUIPMENT LINE</span><h3>기기 구매</h3></div><div class="carousel-controls"><button class="carousel-arrow prev" type="button" aria-label="이전 기기">←</button><button class="carousel-arrow next" type="button" aria-label="다음 기기">→</button></div></div>
       <div class="spectrum-track equipment-track">
-        <a class="spectrum-card" href="#contact" data-product="더덕 재배 기기"><span>01</span><div class="crop-name">더덕</div><small>DEODEOK</small><h4>더덕</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="꽈리고추 재배 기기"><span>02</span><div class="crop-name">꽈리고추</div><small>SHISHITO PEPPER</small><h4>꽈리고추</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="청양고추 재배 기기"><span>03</span><div class="crop-name">청양고추</div><small>CHEONGYANG PEPPER</small><h4>청양고추</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="가지 재배 기기"><span>04</span><div class="crop-name">가지</div><small>EGGPLANT</small><h4>가지</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="시금치 재배 기기"><span>05</span><div class="crop-name">시금치</div><small>SPINACH</small><h4>시금치</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="콩류 재배 기기"><span>06</span><div class="crop-name">콩류</div><small>LEGUMES</small><h4>콩류</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="생강 재배 기기"><span>07</span><div class="crop-name">생강</div><small>GINGER</small><h4>생강</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="더덕 재배 기기"><span>01</span><div class="crop-photo"><img src="deodeok.png" alt="더덕" loading="lazy"></div><small>deodeok</small><h4>더덕</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="꽈리고추 재배 기기"><span>02</span><div class="crop-photo"><img src="shishito%20pepper.png" alt="꽈리고추" loading="lazy"></div><small>shishito pepper</small><h4>꽈리고추</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="청양고추 재배 기기"><span>03</span><div class="crop-photo"><img src="cheongyang%20chili%20pepper.png" alt="청양고추" loading="lazy"></div><small>cheongyang chili pepper</small><h4>청양고추</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="가지 재배 기기"><span>04</span><div class="crop-photo"><img src="eggplant.png" alt="가지" loading="lazy"></div><small>eggplant</small><h4>가지</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="시금치 재배 기기"><span>05</span><div class="crop-photo"><img src="spinach.png" alt="시금치" loading="lazy"></div><small>spinach</small><h4>시금치</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="콩 재배 기기"><span>06</span><div class="crop-photo"><img src="bean.png" alt="콩" loading="lazy"></div><small>bean</small><h4>콩</h4></a>
+        <a class="spectrum-card" href="#contact" data-product="생강 재배 기기"><span>07</span><div class="crop-photo"><img src="ginger.png" alt="생강" loading="lazy"></div><small>ginger</small><h4>생강</h4></a>
       </div><div class="carousel-footer"><div class="carousel-progress"><i></i></div><span class="carousel-count">01 / 07</span></div>
     </div>
   </section>
