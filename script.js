@@ -13,6 +13,11 @@ typeScaleGuard.rel = 'stylesheet';
 typeScaleGuard.href = 'type-scale-guard.css';
 document.head.appendChild(typeScaleGuard);
 
+const textHierarchyGuard = document.createElement('link');
+textHierarchyGuard.rel = 'stylesheet';
+textHierarchyGuard.href = 'text-hierarchy-guard.css';
+document.head.appendChild(textHierarchyGuard);
+
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
