@@ -1,0 +1,116 @@
+/* Text hierarchy guard
+   - #39B974 is reserved for actual titles only.
+   - Supporting copy, labels, metadata, status text and links never use green.
+   - Korean display titles keep words intact and respect intentional <br> breaks.
+*/
+
+/* Never split Korean words in display titles. */
+main h1,
+main h2,
+main h3,
+main h4,
+.product-drawer h2 {
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  text-wrap: balance;
+}
+
+/* Contact title has a deliberate two-line composition. */
+.contact-copy h2 {
+  white-space: nowrap;
+  word-break: keep-all !important;
+}
+
+/* Light green-themed scenes: supporting text stays navy. */
+.product-feature-green .eyebrow,
+.product-feature-green .plain-link,
+.product-feature-green .product-facts,
+.product-feature-green .product-facts span,
+.value-section .section-marker,
+.value-section .section-marker span,
+.value-section .section-marker b,
+.value-section .value-tab span,
+.value-section .value-number strong,
+.value-section .value-number small,
+.readiness .section-marker,
+.readiness .section-marker span,
+.readiness .section-marker b,
+.readiness .accordion-list summary span,
+.readiness .accordion-list summary i,
+.crop-line-green .eyebrow,
+.crop-line-green .crop-card span,
+.crop-line-green .carousel-count,
+.support .section-marker,
+.support .section-marker span,
+.support .section-marker b,
+.support-grid span,
+.site-footer b {
+  color: var(--navy) !important;
+}
+
+.product-feature-green p,
+.value-section p,
+.readiness p,
+.crop-line-green p,
+.support p,
+.site-footer p {
+  color: var(--navy) !important;
+}
+
+/* Dark green-themed scene: supporting text stays paper, not green. */
+.field-network .section-marker,
+.field-network .section-marker span,
+.field-network .section-marker b,
+.field-grid span,
+.field-grid p,
+.field-grid .plain-link,
+.field-network .split-heading > p {
+  color: var(--paper) !important;
+}
+
+/* Green remains allowed only on actual heading elements when intentionally assigned. */
+.product-feature-green h2,
+.value-section .section-heading h2,
+.readiness .section-heading h2,
+.crop-line-green .crop-line-head h3,
+.support .section-heading h2 {
+  color: var(--navy) !important;
+}
+
+.field-network .section-heading h2 {
+  color: var(--paper) !important;
+}
+
+/* Blue or neutral sections keep their existing title palette; descriptions remain readable. */
+.validation .split-heading > p,
+.updates .split-heading > p {
+  color: var(--navy) !important;
+}
+
+/* Prevent awkward orphaned Korean syllables in card/support copy as well. */
+main p,
+main li,
+main a,
+main button,
+.product-drawer p,
+.product-drawer dd,
+.product-drawer dt {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 760px) {
+  .contact-copy h2 {
+    font-size: 40px !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.012em !important;
+  }
+
+  /* Other large headings may wrap at spaces on small screens, never inside a word. */
+  .section-heading h2,
+  .product-feature-copy h2,
+  .technology-copy h2 {
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+}
