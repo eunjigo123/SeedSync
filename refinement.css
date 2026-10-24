@@ -38,9 +38,10 @@ footer,
 .mobile-nav,
 .mobile-nav a {
   border-width: var(--divider-width) !important;
+  border-color: var(--navy) !important;
 }
 
-/* Every #86B7C5 thin line is explicitly normalized to 3px */
+/* All divider / separator lines are 3px navy */
 .site-header,
 .brand-mark,
 .hero-stage,
@@ -62,6 +63,7 @@ footer,
 footer,
 .mobile-nav {
   border-width: 3px !important;
+  border-color: var(--navy) !important;
 }
 
 .feature-strip span,
@@ -74,24 +76,25 @@ footer,
 .mobile-nav a,
 .machine-shelf i {
   border-width: 3px !important;
+  border-color: var(--navy) !important;
 }
 
 .lineup-stats {
-  border: 3px solid var(--blue) !important;
+  border: 3px solid var(--navy) !important;
 }
 .lineup-stats > div {
-  border-right: 3px solid var(--blue) !important;
+  border-right: 3px solid var(--navy) !important;
 }
 .lineup-stats > div:last-child {
   border-right: 0 !important;
 }
 
 .service-grid {
-  border-top: 3px solid var(--blue) !important;
-  border-bottom: 3px solid var(--blue) !important;
+  border-top: 3px solid var(--navy) !important;
+  border-bottom: 3px solid var(--navy) !important;
 }
 .service-grid article {
-  border-right: 3px solid var(--blue) !important;
+  border-right: 3px solid var(--navy) !important;
 }
 .service-grid article:last-child {
   border-right: 0 !important;
@@ -99,8 +102,8 @@ footer,
 
 .stage-grid {
   background-image:
-    linear-gradient(var(--blue) 3px, transparent 3px),
-    linear-gradient(90deg, var(--blue) 3px, transparent 3px) !important;
+    linear-gradient(var(--navy) 3px, transparent 3px),
+    linear-gradient(90deg, var(--navy) 3px, transparent 3px) !important;
 }
 
 /* Unified section rhythm */
@@ -335,7 +338,7 @@ footer p {
 
   .lineup-stats > div {
     border-right: 0 !important;
-    border-bottom: 3px solid var(--blue) !important;
+    border-bottom: 3px solid var(--navy) !important;
   }
   .lineup-stats > div:last-child {
     border-bottom: 0 !important;
@@ -343,7 +346,7 @@ footer p {
 
   .service-grid article {
     border-right: 0 !important;
-    border-bottom: 3px solid var(--blue) !important;
+    border-bottom: 3px solid var(--navy) !important;
   }
   .service-grid article:last-child {
     border-bottom: 0 !important;
