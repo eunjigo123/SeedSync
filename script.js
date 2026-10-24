@@ -12,15 +12,22 @@ $$('.mobile-nav a').forEach((link) => {
   link.addEventListener('click', () => mobileNav?.classList.remove('open'));
 });
 
-$$('.benefit-tab').forEach((tab) => {
+$$('.value-tab').forEach((tab) => {
   tab.addEventListener('click', () => {
-    const key = tab.dataset.benefit;
-
-    $$('.benefit-tab').forEach((item) => item.classList.remove('active'));
-    $$('.benefit-panel').forEach((panel) => panel.classList.remove('active'));
-
+    const key = tab.dataset.value;
+    $$('.value-tab').forEach((item) => item.classList.remove('active'));
+    $$('.value-panel').forEach((panel) => panel.classList.remove('active'));
     tab.classList.add('active');
     document.querySelector(`[data-panel="${key}"]`)?.classList.add('active');
+  });
+});
+
+$$('.accordion-list details').forEach((detail) => {
+  detail.addEventListener('toggle', () => {
+    if (!detail.open) return;
+    $$('.accordion-list details').forEach((other) => {
+      if (other !== detail) other.open = false;
+    });
   });
 });
 
@@ -35,61 +42,38 @@ $$('[data-carousel]').forEach((carousel) => {
 
   if (!track || !cards.length) return;
 
-  const pad = (number) => String(number).padStart(2, '0');
-
-  const getStep = () => {
+  const pad = (n) => String(n).padStart(2, '0');
+  const step = () => {
     const gap = parseFloat(getComputedStyle(track).gap) || 0;
     return cards[0].getBoundingClientRect().width + gap;
   };
 
-  const updateCarousel = () => {
-    const step = getStep();
-    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
-    const ratio = maxScroll ? Math.min(1, Math.max(0, track.scrollLeft / maxScroll)) : 0;
-    const current = Math.min(cards.length, Math.max(1, Math.round(track.scrollLeft / step) + 1));
-    const base = 100 / cards.length;
-
-    if (progress) progress.style.width = `${base + ratio * (100 - base)}%`;
+  const update = () => {
+    const max = Math.max(0, track.scrollWidth - track.clientWidth);
+    const ratio = max ? Math.min(1, Math.max(0, track.scrollLeft / max)) : 0;
+    const current = Math.min(cards.length, Math.max(1, Math.round(track.scrollLeft / step()) + 1));
+    if (progress) progress.style.width = `${(100 / cards.length) + ratio * (100 - 100 / cards.length)}%`;
     if (count) count.textContent = `${pad(current)} / ${pad(cards.length)}`;
   };
 
-  prev?.addEventListener('click', () => {
-    track.scrollBy({ left: -getStep(), behavior: 'smooth' });
-  });
-
-  next?.addEventListener('click', () => {
-    track.scrollBy({ left: getStep(), behavior: 'smooth' });
-  });
-
-  let ticking = false;
-  track.addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-
-    requestAnimationFrame(() => {
-      updateCarousel();
-      ticking = false;
-    });
-  });
+  prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  track.addEventListener('scroll', () => requestAnimationFrame(update));
 
   cards.forEach((card) => {
     card.addEventListener('click', () => {
       const selected = $('#selectedProduct');
-      const product = card.dataset.product || card.querySelector('h4')?.textContent || '선택 상품';
-
-      if (selected) {
-        selected.hidden = false;
-        selected.textContent = `선택 상품 · ${category} · ${product}`;
-      }
+      if (!selected) return;
+      selected.hidden = false;
+      selected.textContent = `선택 상품 · ${category} · ${card.dataset.product || card.querySelector('h4')?.textContent || '선택 상품'}`;
     });
   });
 
-  updateCarousel();
+  update();
 });
 
 window.addEventListener('resize', () => {
-  $$('[data-carousel]').forEach((carousel) => {
-    const track = carousel.querySelector('.spectrum-track');
-    if (track) track.dispatchEvent(new Event('scroll'));
+  $$('[data-carousel] .spectrum-track').forEach((track) => {
+    track.dispatchEvent(new Event('scroll'));
   });
 });
