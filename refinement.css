@@ -2,6 +2,7 @@
   --divider-width: 1.5px;
   --section-space: 112px;
   --section-inline: 48px;
+  --sage: #3F5E49;
 }
 
 /* Stronger divider system */
@@ -172,19 +173,27 @@ footer p {
   line-height: 1.55;
 }
 
-/* Slightly calmer text blocks */
+/* Section descriptions: +1px, stronger weight, higher contrast */
 .hero-bottom p,
 .split-heading > p,
 .flagship-copy > p:not(.eyebrow),
 .tech-copy > p {
+  font-family: 'GMarketSansBold', 'Russo One', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.86;
+  color: #3F5E49;
 }
 
 .big-product-copy p,
 .value-copy p,
 .accordion-list details p,
 .service-grid p {
+  font-family: 'GMarketSansBold', 'Russo One', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
   line-height: 1.84;
+  color: #3F5E49;
 }
 
 @media (max-width: 1100px) {
@@ -240,6 +249,17 @@ footer p {
   .service-grid span,
   footer p {
     font-size: 16px;
+  }
+
+  .hero-bottom p,
+  .split-heading > p,
+  .flagship-copy > p:not(.eyebrow),
+  .big-product-copy p,
+  .value-copy p,
+  .tech-copy > p,
+  .accordion-list details p,
+  .service-grid p {
+    font-size: 17px;
   }
 
   .big-product {
