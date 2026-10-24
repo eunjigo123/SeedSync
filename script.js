@@ -1,18 +1,7 @@
-const fontStyle = document.createElement('style');
-fontStyle.textContent = `
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-@font-face {
-  font-family: 'GMarketSans';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-body, button, input, textarea, select {
-  font-family: 'Russo One', 'GMarketSans', sans-serif;
-}
-`;
-document.head.appendChild(fontStyle);
+const typographyLink = document.createElement('link');
+typographyLink.rel = 'stylesheet';
+typographyLink.href = 'typography.css';
+document.head.appendChild(typographyLink);
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
