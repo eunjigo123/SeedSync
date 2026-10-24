@@ -7,33 +7,31 @@
   <title>SeedSync | Smart Agriculture Systems</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .crop-photo{height:285px;margin-top:12px;overflow:hidden;border-bottom:1px solid #86B7C5;background:#F5F7F4}
-    .crop-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .28s ease}
-    .spectrum-card:hover .crop-photo img{transform:scale(1.025)}
-    .spectrum-card small{margin-top:18px;text-transform:lowercase}
-    @media(max-width:760px){.crop-photo{height:235px}}
-  </style>
+  <link rel="stylesheet" href="typography.css">
+  <link rel="stylesheet" href="refinement.css">
 </head>
 <body>
 <header class="site-header" id="header">
   <a class="brand" href="#home" aria-label="SeedSync home"><span class="brand-mark"><i></i><i></i><i></i></span><span>SeedSync</span></a>
   <nav class="desktop-nav" aria-label="주요 메뉴">
-    <a href="#products">Products</a><a href="#value">Value</a><a href="#technology">Technology</a><a href="#lineup">Lineup</a><a href="#service">Support</a>
+    <div class="nav-group"><a href="#products">Products</a><div class="nav-dropdown"><a href="#seedling-line">Seedlings</a><a href="#flagship">Seed Optima Bed</a><a href="#lineup">Crop Lineup</a></div></div>
+    <div class="nav-group"><a href="#technology">Technology</a><div class="nav-dropdown"><a href="#technology">Control Logic</a><a href="#flagship">Hardware</a><a href="#results">Field Results</a></div></div>
+    <a href="#stories">Stories</a>
+    <a href="#service">Support</a>
+    <a href="#updates">Updates</a>
   </nav>
-  <div class="header-actions"><a class="contact-link" href="#contact">도입 상담 ↗</a><button id="menuOpen" class="menu-button" type="button">MENU</button></div>
-  <div id="mobileNav" class="mobile-nav"><a href="#products">Products</a><a href="#value">Value</a><a href="#technology">Technology</a><a href="#lineup">Lineup</a><a href="#service">Support</a><a href="#contact">도입 상담</a></div>
+  <div class="header-actions"><a class="contact-link" href="#contact">도입 상담 ↗</a><button id="menuOpen" class="menu-button" type="button" aria-expanded="false" aria-controls="mobileNav">MENU</button></div>
+  <div id="mobileNav" class="mobile-nav"><a href="#products">Products</a><a href="#technology">Technology</a><a href="#results">Results</a><a href="#stories">Stories</a><a href="#lineup">Lineup</a><a href="#service">Support</a><a href="#updates">Updates</a><a href="#contact">도입 상담</a></div>
 </header>
 
 <main id="home">
-  <section class="hero carbon-hero">
-    <div class="hero-kicker">SMART AGRICULTURE / NURSERY AUTOMATION</div>
-    <div class="hero-title-wrap"><h1>정밀한 농업은<br><span>좋은 묘에서 시작됩니다.</span></h1></div>
-    <div class="hero-stage" aria-label="SeedOptimaBed product visualization">
+  <section class="hero carbon-hero reveal-root">
+    <div class="hero-kicker reveal-item">SMART AGRICULTURE / NURSERY AUTOMATION</div>
+    <div class="hero-title-wrap reveal-item"><h1>정밀한 농업은<br><span>좋은 묘에서 시작됩니다.</span></h1></div>
+    <div class="hero-stage reveal-item" aria-label="Seed Optima Bed product visualization">
       <div class="stage-grid"></div>
-      <div class="stage-machine large-machine">
+      <div class="stage-machine large-machine" id="heroMachine">
         <div class="machine-roof"></div>
         <div class="machine-body">
           <div class="machine-shelf"><i></i><i></i><i></i><i></i><i></i></div>
@@ -42,18 +40,23 @@
         </div>
         <div class="machine-fan">✦</div>
       </div>
-      <div class="hero-stage-label"><span>SEEDOPTIMABED</span><b>24V / SENSOR + TIMER / AUTO CONTROL</b></div>
+      <button class="product-callout callout-sensor" type="button" data-callout="sensor"><span>01</span> SENSOR</button>
+      <button class="product-callout callout-water" type="button" data-callout="water"><span>02</span> WATER</button>
+      <button class="product-callout callout-air" type="button" data-callout="air"><span>03</span> AIR</button>
+      <button class="product-callout callout-control" type="button" data-callout="control"><span>04</span> CONTROL</button>
+      <div class="callout-panel" id="calloutPanel" aria-live="polite"><small>SELECT A SYSTEM POINT</small><strong>Seed Optima Bed</strong><p>제품 주변의 포인트를 눌러 주요 기능을 확인하세요.</p></div>
+      <div class="hero-stage-label"><span>SEED OPTIMA BED</span><b>24V / SENSOR + TIMER / AUTO CONTROL</b></div>
     </div>
-    <div class="hero-bottom">
+    <div class="hero-bottom reveal-item">
       <p>센서와 시간 제어를 결합해 관수·가습·환기 환경을 자동으로 관리하는 저전력 육묘 시스템.</p>
       <div><a class="button button-blue" href="#products">제품 보기</a><a class="plain-link" href="#technology">기술 보기 →</a></div>
     </div>
     <a class="scroll-cue" href="#products">SCROLL ↓</a>
   </section>
 
-  <section class="section products" id="products">
-    <div class="section-heading split-heading"><div><p class="eyebrow">SMART AGRICULTURE PRODUCTS</p><h2>두 개의 제품 라인.<br>하나의 재배 흐름.</h2></div><p>묘를 구매해 바로 재배를 시작하거나, 작물별 환경에 맞춘 자동화 기기를 도입할 수 있습니다.</p></div>
-    <div class="product-duo">
+  <section class="section products reveal-section" id="products">
+    <div class="section-heading split-heading reveal-item"><div><p class="eyebrow">SMART AGRICULTURE PRODUCTS</p><h2>두 개의 제품 라인.<br>하나의 재배 흐름.</h2></div><p>묘를 구매해 바로 재배를 시작하거나, 작물별 환경에 맞춘 자동화 기기를 도입할 수 있습니다.</p></div>
+    <div class="product-duo reveal-item">
       <a class="big-product seed-product" href="#seedling-line">
         <div class="big-product-top"><span>01 / SEEDLING LINE</span><b>묘 구매</b></div>
         <div class="seed-graphic"><i></i><i></i><i></i><i></i><i></i></div>
@@ -67,39 +70,52 @@
     </div>
   </section>
 
-  <section class="flagship section-wide">
-    <div class="flagship-copy"><p class="eyebrow">FLAGSHIP SYSTEM</p><h2>SeedOptimaBed</h2><p>농가가 반복해서 확인하던 환경을 시스템이 대신 보고, 필요한 순간에 장치를 움직입니다.</p><a class="plain-link" href="#technology">Explore the system →</a></div>
-    <div class="flagship-visual">
+  <section class="flagship section-wide reveal-section" id="flagship">
+    <div class="flagship-copy reveal-item"><p class="eyebrow">FLAGSHIP SYSTEM</p><h2>Seed Optima Bed</h2><p>농가가 반복해서 확인하던 환경을 시스템이 대신 보고, 필요한 순간에 장치를 움직입니다.</p><a class="plain-link" href="#technology">Explore the system →</a></div>
+    <div class="flagship-visual reveal-item">
       <div class="flagship-title">SMART NURSERY UNIT</div>
       <div class="flagship-machine stage-machine"><div class="machine-roof"></div><div class="machine-body"><div class="machine-shelf"><i></i><i></i><i></i><i></i><i></i></div><div class="machine-shelf"><i></i><i></i><i></i><i></i><i></i></div><div class="machine-console"><span>SOIL</span><span>AIR</span><span>WATER</span><span>CTRL</span></div></div><div class="machine-fan">✦</div></div>
+      <div class="hardware-callouts"><article><span>01</span><b>환경 센서</b><p>토양·온도·습도·CO₂ 상태를 확인합니다.</p></article><article><span>02</span><b>24V 제어부</b><p>저전압 기반으로 릴레이와 장치를 제어합니다.</p></article><article><span>03</span><b>관수·가습</b><p>조건에 맞춰 물과 습도를 자동 관리합니다.</p></article><article><span>04</span><b>환기</b><p>팬을 이용해 내부 공기 흐름을 조절합니다.</p></article></div>
       <div class="feature-strip"><span>자동 관수</span><span>환기·가습</span><span>환경 센서</span><span>시간 + 센서 제어</span></div>
     </div>
   </section>
 
-  <section class="section value" id="value">
-    <div class="section-heading"><p class="eyebrow">BUILT FOR REAL FARM WORK</p><h2>농가 운영을<br>더 단순하게.</h2></div>
-    <div class="value-tabs" role="tablist">
+  <section class="section value reveal-section" id="value">
+    <div class="section-heading reveal-item"><p class="eyebrow">BUILT FOR REAL FARM WORK</p><h2>기능보다 중요한 건<br>현장에서의 결과.</h2></div>
+    <div class="value-tabs reveal-item" role="tablist">
       <button class="value-tab active" data-value="power"><span>01</span> 저전력 운전</button>
       <button class="value-tab" data-value="control"><span>02</span> 이중 제어</button>
-      <button class="value-tab" data-value="uniform"><span>03</span> 균일 생육</button>
+      <button class="value-tab" data-value="uniform"><span>03</span> 균일 생육 기반</button>
     </div>
-    <div class="value-panels">
-      <article class="value-panel active" data-panel="power"><div class="metric"><strong>24V</strong><small>LOW POWER SYSTEM</small></div><div class="value-copy"><h3>필요한 순간에만 작동합니다.</h3><p>센서 상태와 설정 시간을 함께 확인해 관수·가습·환기를 운전합니다.</p><ul><li>24V DC 기반 제어</li><li>필요 조건 중심 작동</li><li>농가 규모에 맞춘 구성</li></ul></div></article>
-      <article class="value-panel" data-panel="control"><div class="metric"><strong>2중</strong><small>CONTROL LOGIC</small></div><div class="value-copy"><h3>시간과 환경을 함께 봅니다.</h3><p>한 가지 값에만 의존하지 않고 시간 조건과 센서 기준값을 동시에 확인합니다.</p><ul><li>시간 조건 확인</li><li>센서 기준값 확인</li><li>자동 제어 실행</li></ul></div></article>
+    <div class="value-panels reveal-item">
+      <article class="value-panel active" data-panel="power"><div class="metric"><strong data-count="24" data-suffix="V">24V</strong><small>LOW POWER SYSTEM</small></div><div class="value-copy"><h3>필요한 순간에만 작동합니다.</h3><p>24V DC 기반 제어와 조건 중심 운전으로 불필요한 장치 작동을 줄이는 방향으로 설계했습니다.</p><ul><li>24V DC 기반 제어</li><li>필요 조건 중심 작동</li><li>농가 규모에 맞춘 구성</li></ul></div></article>
+      <article class="value-panel" data-panel="control"><div class="metric"><strong data-count="2" data-suffix="중">2중</strong><small>CONTROL LOGIC</small></div><div class="value-copy"><h3>시간과 환경을 함께 봅니다.</h3><p>한 가지 값에만 의존하지 않고 시간 조건과 센서 기준값을 동시에 확인합니다.</p><ul><li>시간 조건 확인</li><li>센서 기준값 확인</li><li>자동 제어 실행</li></ul></div></article>
       <article class="value-panel" data-panel="uniform"><div class="metric"><strong>균일</strong><small>GROWTH ENVIRONMENT</small></div><div class="value-copy"><h3>관리 편차를 줄이는 방향으로 설계합니다.</h3><p>반복 관리의 공백을 줄여 육묘 환경을 일정하게 유지하는 데 집중합니다.</p><ul><li>작물별 설정값</li><li>반복 작업 부담 감소</li><li>균일묘 생산 기반</li></ul></div></article>
     </div>
   </section>
 
-  <section class="technology section-wide" id="technology">
-    <div class="tech-visual">
-      <div class="tech-orbit"><span>SOIL</span><span>TEMP</span><span>HUMIDITY</span><span>CO₂</span><b>SENSE<br>DECIDE<br>CONTROL</b></div>
+  <section class="technology section-wide reveal-section" id="technology">
+    <div class="tech-visual reveal-item" id="controlFlow">
+      <div class="flow-label flow-sense">SENSE</div><div class="flow-label flow-decide">DECIDE</div><div class="flow-label flow-control">CONTROL</div>
+      <div class="tech-orbit"><span>SOIL</span><span>TEMP</span><span>HUMIDITY</span><span>CO₂</span><b><em>SENSE</em><em>DECIDE</em><em>CONTROL</em></b></div>
+      <div class="actuator-row"><span>WATER</span><span>FAN</span><span>HUMIDIFIER</span></div>
     </div>
-    <div class="tech-copy"><p class="eyebrow">SEEDSYNC CONTROL</p><h2>센서가 보고,<br>시스템이 움직입니다.</h2><p>온도·습도·토양·CO₂ 데이터를 읽고, 설정 조건과 비교하고, 필요한 장치를 작동시키는 명확한 제어 흐름입니다.</p><div class="tech-stats"><div><strong>4</strong><span>ENVIRONMENT SIGNALS</span></div><div><strong>3</strong><span>CONTROL STEPS</span></div><div><strong>24V</strong><span>POWER SYSTEM</span></div></div><a class="button button-blue" href="#contact">기술 상담 요청</a></div>
+    <div class="tech-copy reveal-item"><p class="eyebrow">SEEDSYNC CONTROL</p><h2>센서가 보고,<br>시스템이 움직입니다.</h2><p>온도·습도·토양·CO₂ 데이터를 읽고, 설정 조건과 비교하고, 필요한 장치를 작동시키는 명확한 제어 흐름입니다.</p><div class="tech-stats"><div><strong data-count="4">4</strong><span>ENVIRONMENT SIGNALS</span></div><div><strong data-count="3">3</strong><span>CONTROL STEPS</span></div><div><strong data-count="24" data-suffix="V">24V</strong><span>POWER SYSTEM</span></div></div><a class="button button-blue" href="#contact">기술 상담 요청</a></div>
   </section>
 
-  <section class="section reliability">
-    <div class="section-heading split-heading"><div><p class="eyebrow">READY FOR FARM OPERATIONS</p><h2>현장에 맞게,<br>단순하게.</h2></div><p>복잡한 스마트팜 전체를 바꾸는 대신, 육묘 단계에서 필요한 기능부터 적용하는 방식입니다.</p></div>
-    <div class="accordion-list">
+  <section class="section results reveal-section" id="results">
+    <div class="section-heading split-heading reveal-item"><div><p class="eyebrow">FIELD RESULTS</p><h2>데이터로<br>검증하겠습니다.</h2></div><p>현재 SeedSync는 MVP와 지역별 테스트를 준비하고 있습니다. 검증 전 수치를 임의로 제시하지 않고, 실제 테스트 데이터가 확보되는 순서대로 공개합니다.</p></div>
+    <div class="results-status reveal-item"><span class="status-dot"></span><b>FIELD TEST IN PROGRESS</b><p>실증 항목과 측정 기준을 먼저 공개합니다.</p></div>
+    <div class="results-grid reveal-item"><article><span>01</span><h3>발아·활착</h3><strong>측정 예정</strong><p>작물별 발아율과 초기 활착 상태를 비교합니다.</p></article><article><span>02</span><h3>환경 편차</h3><strong>측정 예정</strong><p>온도·습도·토양 환경의 시간대별 편차를 기록합니다.</p></article><article><span>03</span><h3>관리 시간</h3><strong>측정 예정</strong><p>수동 확인·관수 작업 시간이 얼마나 줄어드는지 측정합니다.</p></article><article><span>04</span><h3>전력 사용</h3><strong>측정 예정</strong><p>24V 시스템의 운전 시간과 실제 사용 전력을 기록합니다.</p></article></div>
+  </section>
+
+  <section class="trust-band reveal-section" id="network">
+    <div class="section-wide trust-inner"><div class="trust-copy reveal-item"><p class="eyebrow">MVP TEST NETWORK</p><h2>실증 파트너를<br>늘려가는 중입니다.</h2></div><div class="trust-track reveal-item" aria-label="현재 검증 네트워크 상태"><span>농가 인터뷰 진행</span><span>지역별 테스트 준비</span><span>기술센터 협력 제안</span><span>종묘·농자재 파트너 발굴</span><span>시험판매 준비</span></div></div>
+  </section>
+
+  <section class="section reliability reveal-section">
+    <div class="section-heading split-heading reveal-item"><div><p class="eyebrow">READY FOR FARM OPERATIONS</p><h2>현장에 맞게,<br>단순하게.</h2></div><p>복잡한 스마트팜 전체를 바꾸는 대신, 육묘 단계에서 필요한 기능부터 적용하는 방식입니다.</p></div>
+    <div class="accordion-list reveal-item">
       <details open><summary><span>01</span><b>작물별 환경 세팅</b><i>+</i></summary><p>작물과 육묘 조건에 따라 기준값과 운전 조건을 설정합니다.</p></details>
       <details><summary><span>02</span><b>센서 + 타이머 이중 제어</b><i>+</i></summary><p>시간과 실제 환경값을 함께 확인해 장치를 작동시킵니다.</p></details>
       <details><summary><span>03</span><b>자동 관수 · 가습 · 환기</b><i>+</i></summary><p>반복적인 관리 작업을 자동화해 수동 관리 간극을 줄입니다.</p></details>
@@ -107,49 +123,78 @@
     </div>
   </section>
 
-  <section class="lineup section-wide" id="lineup">
-    <div class="lineup-stats"><div><strong>2</strong><span>PURCHASE LINES</span></div><div><strong>14</strong><span>PRODUCT OPTIONS</span></div><div><strong>1</strong><span>SEEDSYNC SYSTEM</span></div></div>
-    <div class="lineup-heading"><p class="eyebrow">PRODUCT SPECTRUM</p><h2>작물별 라인업.</h2></div>
+  <section class="lineup section-wide reveal-section" id="lineup">
+    <div class="lineup-stats reveal-item"><div><strong data-count="2">2</strong><span>PURCHASE LINES</span></div><div><strong data-count="14">14</strong><span>PRODUCT OPTIONS</span></div><div><strong data-count="1">1</strong><span>SEEDSYNC SYSTEM</span></div></div>
+    <div class="lineup-heading reveal-item"><p class="eyebrow">PRODUCT SPECTRUM</p><h2>작물별 라인업.</h2><p class="lineup-intro">카드를 누르면 작물별 적용 정보를 확인할 수 있습니다.</p></div>
 
-    <div class="spectrum-carousel" id="seedling-line" data-carousel data-category="묘 구매">
+    <div class="spectrum-carousel reveal-item" id="seedling-line" data-carousel data-category="묘 구매">
       <div class="carousel-head"><div><span>01 / SEEDLING LINE</span><h3>묘 구매</h3></div><div class="carousel-controls"><button class="carousel-arrow prev" type="button" aria-label="이전 묘">←</button><button class="carousel-arrow next" type="button" aria-label="다음 묘">→</button></div></div>
       <div class="spectrum-track">
-        <a class="spectrum-card" href="#contact" data-product="인삼 묘"><span>01</span><div class="crop-photo"><img src="ginseng.png" alt="인삼" loading="lazy"></div><small>ginseng</small><h4>인삼</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="비트 묘"><span>02</span><div class="crop-photo"><img src="beet.png" alt="비트" loading="lazy"></div><small>beet</small><h4>비트</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="아스파라거스 묘"><span>03</span><div class="crop-photo"><img src="asparagus.png" alt="아스파라거스" loading="lazy"></div><small>asparagus</small><h4>아스파라거스</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="더덕 묘"><span>04</span><div class="crop-photo"><img src="deodeok.png" alt="더덕" loading="lazy"></div><small>deodeok</small><h4>더덕</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="셀러리 묘"><span>05</span><div class="crop-photo"><img src="celery.png" alt="셀러리" loading="lazy"></div><small>celery</small><h4>셀러리</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="우엉 묘"><span>06</span><div class="crop-photo"><img src="burdock.png" alt="우엉" loading="lazy"></div><small>burdock</small><h4>우엉</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="스테비아 묘"><span>07</span><div class="crop-photo"><img src="stevia.png" alt="스테비아" loading="lazy"></div><small>stevia</small><h4>스테비아</h4></a>
+        <button class="spectrum-card" type="button" data-product="인삼 묘" data-crop="인삼" data-category-name="묘 구매" data-image="ginseng.png"><span>01</span><div class="crop-photo"><img src="ginseng.png" alt="인삼" loading="lazy"></div><small>ginseng</small><h4>인삼</h4></button>
+        <button class="spectrum-card" type="button" data-product="비트 묘" data-crop="비트" data-category-name="묘 구매" data-image="beet.png"><span>02</span><div class="crop-photo"><img src="beet.png" alt="비트" loading="lazy"></div><small>beet</small><h4>비트</h4></button>
+        <button class="spectrum-card" type="button" data-product="아스파라거스 묘" data-crop="아스파라거스" data-category-name="묘 구매" data-image="asparagus.png"><span>03</span><div class="crop-photo"><img src="asparagus.png" alt="아스파라거스" loading="lazy"></div><small>asparagus</small><h4>아스파라거스</h4></button>
+        <button class="spectrum-card" type="button" data-product="더덕 묘" data-crop="더덕" data-category-name="묘 구매" data-image="deodeok.png"><span>04</span><div class="crop-photo"><img src="deodeok.png" alt="더덕" loading="lazy"></div><small>deodeok</small><h4>더덕</h4></button>
+        <button class="spectrum-card" type="button" data-product="셀러리 묘" data-crop="셀러리" data-category-name="묘 구매" data-image="celery.png"><span>05</span><div class="crop-photo"><img src="celery.png" alt="셀러리" loading="lazy"></div><small>celery</small><h4>셀러리</h4></button>
+        <button class="spectrum-card" type="button" data-product="우엉 묘" data-crop="우엉" data-category-name="묘 구매" data-image="burdock.png"><span>06</span><div class="crop-photo"><img src="burdock.png" alt="우엉" loading="lazy"></div><small>burdock</small><h4>우엉</h4></button>
+        <button class="spectrum-card" type="button" data-product="스테비아 묘" data-crop="스테비아" data-category-name="묘 구매" data-image="stevia.png"><span>07</span><div class="crop-photo"><img src="stevia.png" alt="스테비아" loading="lazy"></div><small>stevia</small><h4>스테비아</h4></button>
       </div><div class="carousel-footer"><div class="carousel-progress"><i></i></div><span class="carousel-count">01 / 07</span></div>
     </div>
 
-    <div class="spectrum-carousel" id="equipment-line" data-carousel data-category="기기 구매">
+    <div class="spectrum-carousel reveal-item" id="equipment-line" data-carousel data-category="기기 구매">
       <div class="carousel-head"><div><span>02 / EQUIPMENT LINE</span><h3>기기 구매</h3></div><div class="carousel-controls"><button class="carousel-arrow prev" type="button" aria-label="이전 기기">←</button><button class="carousel-arrow next" type="button" aria-label="다음 기기">→</button></div></div>
       <div class="spectrum-track equipment-track">
-        <a class="spectrum-card" href="#contact" data-product="더덕 재배 기기"><span>01</span><div class="crop-photo"><img src="deodeok.png" alt="더덕" loading="lazy"></div><small>deodeok</small><h4>더덕</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="꽈리고추 재배 기기"><span>02</span><div class="crop-photo"><img src="shishito%20pepper.png" alt="꽈리고추" loading="lazy"></div><small>shishito pepper</small><h4>꽈리고추</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="청양고추 재배 기기"><span>03</span><div class="crop-photo"><img src="cheongyang%20chili%20pepper.png" alt="청양고추" loading="lazy"></div><small>cheongyang chili pepper</small><h4>청양고추</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="가지 재배 기기"><span>04</span><div class="crop-photo"><img src="eggplant.png" alt="가지" loading="lazy"></div><small>eggplant</small><h4>가지</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="시금치 재배 기기"><span>05</span><div class="crop-photo"><img src="spinach.png" alt="시금치" loading="lazy"></div><small>spinach</small><h4>시금치</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="콩 재배 기기"><span>06</span><div class="crop-photo"><img src="bean.png" alt="콩" loading="lazy"></div><small>bean</small><h4>콩</h4></a>
-        <a class="spectrum-card" href="#contact" data-product="생강 재배 기기"><span>07</span><div class="crop-photo"><img src="ginger.png" alt="생강" loading="lazy"></div><small>ginger</small><h4>생강</h4></a>
+        <button class="spectrum-card" type="button" data-product="더덕 재배 기기" data-crop="더덕" data-category-name="기기 구매" data-image="deodeok.png"><span>01</span><div class="crop-photo"><img src="deodeok.png" alt="더덕" loading="lazy"></div><small>deodeok</small><h4>더덕</h4></button>
+        <button class="spectrum-card" type="button" data-product="꽈리고추 재배 기기" data-crop="꽈리고추" data-category-name="기기 구매" data-image="shishito pepper.png"><span>02</span><div class="crop-photo"><img src="shishito%20pepper.png" alt="꽈리고추" loading="lazy"></div><small>shishito pepper</small><h4>꽈리고추</h4></button>
+        <button class="spectrum-card" type="button" data-product="청양고추 재배 기기" data-crop="청양고추" data-category-name="기기 구매" data-image="cheongyang chili pepper.png"><span>03</span><div class="crop-photo"><img src="cheongyang%20chili%20pepper.png" alt="청양고추" loading="lazy"></div><small>cheongyang chili pepper</small><h4>청양고추</h4></button>
+        <button class="spectrum-card" type="button" data-product="가지 재배 기기" data-crop="가지" data-category-name="기기 구매" data-image="eggplant.png"><span>04</span><div class="crop-photo"><img src="eggplant.png" alt="가지" loading="lazy"></div><small>eggplant</small><h4>가지</h4></button>
+        <button class="spectrum-card" type="button" data-product="시금치 재배 기기" data-crop="시금치" data-category-name="기기 구매" data-image="spinach.png"><span>05</span><div class="crop-photo"><img src="spinach.png" alt="시금치" loading="lazy"></div><small>spinach</small><h4>시금치</h4></button>
+        <button class="spectrum-card" type="button" data-product="콩 재배 기기" data-crop="콩" data-category-name="기기 구매" data-image="bean.png"><span>06</span><div class="crop-photo"><img src="bean.png" alt="콩" loading="lazy"></div><small>bean</small><h4>콩</h4></button>
+        <button class="spectrum-card" type="button" data-product="생강 재배 기기" data-crop="생강" data-category-name="기기 구매" data-image="ginger.png"><span>07</span><div class="crop-photo"><img src="ginger.png" alt="생강" loading="lazy"></div><small>ginger</small><h4>생강</h4></button>
       </div><div class="carousel-footer"><div class="carousel-progress"><i></i></div><span class="carousel-count">01 / 07</span></div>
     </div>
   </section>
 
-  <section class="section service" id="service">
-    <div class="section-heading"><p class="eyebrow">SEEDSYNC SUPPORT</p><h2>도입부터 운영까지.</h2></div>
-    <div class="service-grid"><article><span>01</span><h3>현장·작물 상담</h3><p>작물과 재배 규모, 현재 관리 방식을 확인합니다.</p></article><article><span>02</span><h3>설치·세팅</h3><p>센서 기준과 운전 조건을 현장에 맞게 설정합니다.</p></article><article><span>03</span><h3>운영·A/S</h3><p>사용 중 발생하는 문제와 운영 과정을 지원합니다.</p></article></div>
+  <section class="stories section-wide reveal-section" id="stories">
+    <div class="section-heading split-heading reveal-item"><div><p class="eyebrow">GROWER STORIES</p><h2>실제 농가의<br>사용 기록.</h2></div><p>사례가 없는 상태에서 후기를 만들어내지 않습니다. 테스트 농가와의 실증이 시작되면 작물·기간·측정 결과를 그대로 공개합니다.</p></div>
+    <div class="story-grid reveal-item"><article class="story-card story-open"><span>CASE 01</span><h3>테스트 농가 모집 중</h3><p>더덕·고추류 등 실제 재배 환경에서 Seed Optima Bed의 운전 데이터를 기록할 농가를 모집합니다.</p><a class="plain-link" href="#contact">테스트 문의 →</a></article><article class="story-card"><span>CASE 02</span><h3>지역별 비교 테스트 준비</h3><p>기온과 습도 조건이 다른 지역에서 동일한 제어 로직이 어떻게 작동하는지 비교할 예정입니다.</p><small>FIELD TEST / PLANNED</small></article></div>
+    <div class="quote-slider reveal-item" id="quoteSlider"><button class="quote-arrow quote-prev" type="button" aria-label="이전 상태">←</button><div class="quote-track"><blockquote class="quote-item active"><p>“실제 농가 인터뷰와 실증 데이터가 확보되는 즉시 이 자리에 그대로 공개합니다.”</p><cite>SEEDSYNC / EVIDENCE FIRST</cite></blockquote><blockquote class="quote-item"><p>“제품 소개보다 중요한 것은 농가에서 실제로 작동했는지 보여주는 것입니다.”</p><cite>SEEDSYNC / FIELD VALIDATION</cite></blockquote></div><button class="quote-arrow quote-next" type="button" aria-label="다음 상태">→</button></div>
   </section>
 
-  <section class="contact section-wide" id="contact">
-    <div><p class="eyebrow">GET STARTED</p><h2>우리 농가에 맞는<br>구성을 확인하세요.</h2><p id="selectedProduct" class="selected-product" hidden></p></div>
-    <div class="contact-actions"><a class="button button-blue" href="mailto:hello@example.com">도입 상담 문의</a><a class="plain-link" href="#lineup">라인업 다시 보기 →</a></div>
+  <section class="section service reveal-section" id="service">
+    <div class="section-heading reveal-item"><p class="eyebrow">SEEDSYNC SUPPORT</p><h2>도입부터 운영까지,<br>6단계로 연결합니다.</h2></div>
+    <div class="service-grid service-grid-six reveal-item"><article><span>01</span><h3>현장 상담</h3><p>작물, 재배 규모, 현재 관리 방식을 확인합니다.</p></article><article><span>02</span><h3>환경 분석</h3><p>온습도, 관수 방식, 설치 공간과 필요한 센서를 정리합니다.</p></article><article><span>03</span><h3>구성 제안</h3><p>필요 기능과 장치 조합을 결정합니다.</p></article><article><span>04</span><h3>설치·세팅</h3><p>센서 기준값과 시간 조건을 현장에 맞게 설정합니다.</p></article><article><span>05</span><h3>운영 지원</h3><p>초기 운전 상태를 확인하고 설정값을 조정합니다.</p></article><article><span>06</span><h3>출장 A/S</h3><p>사용 중 발생하는 장치 문제와 유지관리를 지원합니다.</p></article></div>
+  </section>
+
+  <section class="updates section-wide reveal-section" id="updates">
+    <div class="section-heading split-heading reveal-item"><div><p class="eyebrow">SEEDSYNC UPDATES</p><h2>제품이 만들어지는<br>과정까지 공개합니다.</h2></div><p>뉴스를 억지로 채우는 대신 실제 MVP, 테스트, 시험판매 진행 상황을 기록합니다.</p></div>
+    <div class="updates-grid reveal-item"><article><span>NOW</span><h3>MVP 공개 준비</h3><p>팜모닝 반응과 상담 데이터를 확인하기 위한 공개 버전을 준비합니다.</p></article><article><span>NEXT</span><h3>기기 완성 후 테스트</h3><p>센서·릴레이·관수·가습·환기 작동을 순서대로 검증합니다.</p></article><article><span>AFTER</span><h3>지역별 집중 테스트</h3><p>지역과 작물에 따른 운전 조건과 시장 반응을 비교합니다.</p></article><article><span>FINAL</span><h3>시험판매</h3><p>실증 결과와 고객 반응을 바탕으로 최종 시험판매를 진행합니다.</p></article></div>
+  </section>
+
+  <section class="contact section-wide reveal-section" id="contact">
+    <div class="contact-copy reveal-item"><p class="eyebrow">GET STARTED</p><h2>우리 농가에 맞는<br>구성을 확인하세요.</h2><p id="selectedProduct" class="selected-product" hidden></p><p class="contact-note">현재 폼은 MVP 상담 UI입니다. 제출 내용의 서버 저장·전송 기능은 연결 전입니다.</p></div>
+    <form class="consult-form reveal-item" id="consultForm">
+      <label><span>이름</span><input type="text" name="name" required placeholder="성함"></label>
+      <label><span>연락처</span><input type="tel" name="phone" required placeholder="010-0000-0000"></label>
+      <label><span>지역</span><input type="text" name="region" placeholder="예: 충남 논산"></label>
+      <label><span>작물</span><input type="text" name="crop" id="consultCrop" placeholder="예: 더덕"></label>
+      <label><span>관심 제품</span><select name="product" id="consultProduct"><option value="">선택</option><option>묘 구매</option><option>Seed Optima Bed</option><option>작물별 기기 구매</option><option>테스트 농가 참여</option></select></label>
+      <label class="form-wide"><span>문의 내용</span><textarea name="message" rows="4" placeholder="재배 규모와 현재 관리 방식 등을 적어주세요."></textarea></label>
+      <div class="form-actions form-wide"><button class="button button-blue" type="submit">상담 내용 확인</button><span id="formStatus" role="status"></span></div>
+    </form>
   </section>
 </main>
 
-<footer><a class="brand" href="#home"><span class="brand-mark"><i></i><i></i><i></i></span><span>SeedSync</span></a><p>SMART AGRICULTURE SYSTEMS</p><p>© 2026 SeedSync</p></footer>
+<aside class="product-drawer" id="productDrawer" aria-hidden="true" aria-labelledby="drawerTitle">
+  <button class="drawer-close" id="drawerClose" type="button" aria-label="상세 패널 닫기">×</button>
+  <div class="drawer-image"><img id="drawerImage" src="ginseng.png" alt=""></div>
+  <p class="eyebrow" id="drawerCategory">PRODUCT DETAIL</p><h2 id="drawerTitle">작물 상세</h2><p id="drawerDescription">작물별 적용 정보를 확인합니다.</p>
+  <dl><div><dt>적용 라인</dt><dd id="drawerLine">-</dd></div><div><dt>관리 포인트</dt><dd>온도 · 습도 · 토양 · 관수 조건</dd></div><div><dt>제어 방식</dt><dd>센서 + 타이머 이중 제어</dd></div><div><dt>현재 단계</dt><dd>작물별 테스트 조건 고도화 중</dd></div></dl>
+  <a class="button button-blue drawer-cta" href="#contact" id="drawerCta">이 구성으로 상담하기</a>
+</aside>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<a class="sticky-cta" href="#contact">도입 상담 <span>↗</span></a>
+
+<footer class="site-footer"><div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark"><i></i><i></i><i></i></span><span>SeedSync</span></a><p>SMART AGRICULTURE SYSTEMS</p></div><div><b>PRODUCT</b><a href="#products">Products</a><a href="#flagship">Seed Optima Bed</a><a href="#lineup">Crop Lineup</a></div><div><b>EXPLORE</b><a href="#technology">Technology</a><a href="#results">Field Results</a><a href="#stories">Stories</a><a href="#updates">Updates</a></div><div><b>SUPPORT</b><a href="#service">Support</a><a href="#contact">Contact</a></div><p class="footer-copy">© 2026 SeedSync</p></footer>
 <script src="script.js"></script>
 </body>
 </html>
