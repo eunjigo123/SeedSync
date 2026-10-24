@@ -1,9 +1,11 @@
 :root {
+  --navy: #15324A;
+  --paper: #F5F7F4;
   --divider-width: 3px;
   --section-space: 112px;
   --section-inline: 48px;
-  --sage: #2E8B57;
-  --blue: #67B7C7;
+  --sage: #3C9D6A;
+  --blue: #2F9EC4;
 }
 
 /* Stronger divider system */
