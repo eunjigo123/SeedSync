@@ -310,6 +310,15 @@ li,
   letter-spacing: -0.008em;
 }
 
+/* Preserve seedling/equipment carousel photography at 5:4. */
+.crop-card img {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Service and contact */
 .service-grid span,
 footer p {
