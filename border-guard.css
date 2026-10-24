@@ -1,0 +1,71 @@
+/* Border policy: header uses technology blue; all other UI borders use navy. */
+
+/* Header-only border color */
+.site-header,
+.site-header * {
+  border-color: var(--blue) !important;
+}
+
+/* Main structural borders */
+main :is(
+  .section-marker,
+  .button,
+  .button-accent,
+  .drawer-cta,
+  .plain-link,
+  .hero-rail,
+  .hero-machine-scene,
+  .hero-metrics,
+  .hero-metrics > div,
+  .product-feature,
+  .product-feature-copy,
+  .product-facts,
+  .product-facts > span,
+  .value-nav,
+  .value-tab,
+  .value-stage,
+  .value-copy ul,
+  .value-copy li,
+  .technology-stats,
+  .technology-stats > div,
+  .technology-visual,
+  .flow-step,
+  .accordion-list,
+  .accordion-list details,
+  .validation,
+  .validation-status,
+  .validation-grid,
+  .validation-grid > article,
+  .crop-line,
+  .crop-line .crop-card,
+  .crop-line .carousel-arrow,
+  .field-grid,
+  .field-grid > article,
+  .support-grid,
+  .support-grid > article,
+  .updates,
+  .updates-grid,
+  .updates-grid > article,
+  .consult-form input,
+  .consult-form select,
+  .consult-form textarea
+) {
+  border-color: var(--navy) !important;
+}
+
+/* Off-canvas product detail */
+.product-drawer,
+.product-drawer .drawer-close,
+.product-drawer .drawer-image,
+.product-drawer dl,
+.product-drawer dl > div,
+.product-drawer .drawer-cta {
+  border-color: var(--navy) !important;
+}
+
+/* Fixed CTA and footer */
+.sticky-cta,
+.site-footer,
+.site-footer * {
+  border-color: var(--navy) !important;
+}
