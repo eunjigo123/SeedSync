@@ -1,5 +1,5 @@
 :root {
-  --divider-width: 1.5px;
+  --divider-width: 3px;
   --section-space: 112px;
   --section-inline: 48px;
   --sage: #5B7F63;
@@ -224,7 +224,7 @@ footer p {
 
 @media (max-width: 760px) {
   :root {
-    --divider-width: 1.5px;
+    --divider-width: 3px;
     --section-space: 72px;
     --section-inline: 20px;
   }
