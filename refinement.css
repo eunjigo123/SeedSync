@@ -2,7 +2,7 @@
   --divider-width: 1.5px;
   --section-space: 112px;
   --section-inline: 48px;
-  --sage: #3F5E49;
+  --sage: #5B7F63;
 }
 
 /* Stronger divider system */
@@ -173,16 +173,23 @@ footer p {
   line-height: 1.55;
 }
 
-/* Section descriptions: +1px, stronger weight, higher contrast */
-.hero-bottom p,
+/* Section descriptions: +3px, bold and high contrast */
 .split-heading > p,
-.flagship-copy > p:not(.eyebrow),
+.flagship-copy > p:not(.eyebrow) {
+  font-family: 'GMarketSansBold', 'Russo One', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.78;
+  color: #15324A;
+}
+
+.hero-bottom p,
 .tech-copy > p {
   font-family: 'GMarketSansBold', 'Russo One', sans-serif;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 400;
-  line-height: 1.86;
-  color: #3F5E49;
+  line-height: 1.78;
+  color: #86B7C5;
 }
 
 .big-product-copy p,
@@ -190,10 +197,10 @@ footer p {
 .accordion-list details p,
 .service-grid p {
   font-family: 'GMarketSansBold', 'Russo One', sans-serif;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.84;
-  color: #3F5E49;
+  line-height: 1.76;
+  color: #15324A;
 }
 
 @media (max-width: 1100px) {
@@ -259,7 +266,8 @@ footer p {
   .tech-copy > p,
   .accordion-list details p,
   .service-grid p {
-    font-size: 17px;
+    font-size: 20px;
+    line-height: 1.72;
   }
 
   .big-product {
