@@ -3,6 +3,11 @@ typographyLink.rel = 'stylesheet';
 typographyLink.href = 'typography.css';
 document.head.appendChild(typographyLink);
 
+const refinementLink = document.createElement('link');
+refinementLink.rel = 'stylesheet';
+refinementLink.href = 'refinement.css';
+document.head.appendChild(refinementLink);
+
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
