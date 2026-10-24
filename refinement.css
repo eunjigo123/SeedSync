@@ -3,6 +3,7 @@
   --section-space: 112px;
   --section-inline: 48px;
   --sage: #2E8B57;
+  --blue: #67B7C7;
 }
 
 /* Stronger divider system */
@@ -255,7 +256,7 @@ footer p {
   font-size: 21px;
   font-weight: 400;
   line-height: 1.78;
-  color: #86B7C5;
+  color: var(--blue);
 }
 
 .big-product-copy p,
