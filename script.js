@@ -55,6 +55,6 @@ searchInput?.addEventListener('keydown', (event) => {
 window.addEventListener('scroll', () => {
   if (!header) return;
   header.style.boxShadow = window.scrollY > 20
-    ? '0 8px 28px rgba(21, 50, 74, 0.08)'
+    ? '0 8px 28px #15324A'
     : 'none';
 });
