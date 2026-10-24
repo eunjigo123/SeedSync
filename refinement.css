@@ -1,0 +1,272 @@
+:root {
+  --divider-width: 1.5px;
+  --section-space: 112px;
+  --section-inline: 48px;
+}
+
+/* Stronger divider system */
+.site-header,
+.brand-mark,
+.hero-stage,
+.machine-console span,
+.button,
+.contact-link,
+.product-duo,
+.flagship,
+.feature-strip,
+.feature-strip span,
+.value-tabs,
+.value-tab,
+.value-panels,
+.value-copy ul,
+.value-copy li,
+.tech-visual,
+.tech-stats,
+.tech-stats div,
+.accordion-list,
+.accordion-list details,
+.lineup,
+.lineup-stats,
+.lineup-stats div,
+.carousel-arrow,
+.spectrum-card,
+.crop-photo,
+.service-grid,
+.service-grid article,
+footer,
+.mobile-nav,
+.mobile-nav a {
+  border-width: var(--divider-width) !important;
+}
+
+/* Unified section rhythm */
+.section,
+.section-wide {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.section {
+  padding-left: var(--section-inline);
+  padding-right: var(--section-inline);
+}
+
+.section-wide {
+  padding-left: var(--section-inline);
+  padding-right: var(--section-inline);
+}
+
+.value,
+.reliability {
+  padding-top: var(--section-space);
+}
+
+.split-heading {
+  margin-bottom: 48px;
+}
+
+.lineup-stats {
+  margin-bottom: 82px;
+}
+
+.lineup-heading {
+  margin-bottom: 48px;
+}
+
+.spectrum-carousel {
+  margin-top: 58px;
+}
+
+.service .section-heading {
+  margin-bottom: 44px;
+}
+
+/* Bring oversized sections into a more consistent viewport rhythm */
+.big-product {
+  min-height: 650px;
+}
+
+.flagship-visual {
+  height: 700px;
+}
+
+.technology {
+  min-height: 740px;
+}
+
+.tech-visual {
+  height: 560px;
+}
+
+.accordion-list summary {
+  min-height: 98px;
+}
+
+.service-grid article {
+  min-height: 225px;
+}
+
+/* Increase compact text one more step */
+.desktop-nav a,
+.contact-link {
+  font-size: 14px;
+}
+
+.menu-button {
+  font-size: 13px;
+}
+
+.button,
+.plain-link {
+  font-size: 14px;
+}
+
+.hero-kicker,
+.eyebrow {
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: 0.05em;
+}
+
+.scroll-cue {
+  font-size: 12px;
+}
+
+.hero-stage-label,
+.machine-console span {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.big-product-top {
+  font-size: 12px;
+}
+
+.big-product-top b,
+.big-product-copy strong {
+  font-size: 14px;
+}
+
+.flagship-title,
+.feature-strip span {
+  font-size: 13px;
+}
+
+.value-tab {
+  font-size: 16px;
+}
+
+.value-tab span,
+.metric small,
+.tech-orbit span,
+.tech-stats span,
+.accordion-list summary span,
+.lineup-stats span,
+.carousel-head span,
+.spectrum-card > span,
+.spectrum-card small,
+.carousel-count,
+.service-grid span,
+footer p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Slightly calmer text blocks */
+.hero-bottom p,
+.split-heading > p,
+.flagship-copy > p:not(.eyebrow),
+.tech-copy > p {
+  line-height: 1.86;
+}
+
+.big-product-copy p,
+.value-copy p,
+.accordion-list details p,
+.service-grid p {
+  line-height: 1.84;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --section-space: 92px;
+    --section-inline: 32px;
+  }
+
+  .big-product {
+    min-height: 590px;
+  }
+
+  .technology {
+    min-height: auto;
+  }
+
+  .tech-visual {
+    height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --divider-width: 1.5px;
+    --section-space: 72px;
+    --section-inline: 20px;
+  }
+
+  .hero-kicker,
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .button,
+  .plain-link,
+  .mobile-nav a {
+    font-size: 14px;
+  }
+
+  .hero-stage-label,
+  .machine-console span,
+  .big-product-top,
+  .value-tab span,
+  .metric small,
+  .tech-orbit span,
+  .tech-stats span,
+  .accordion-list summary span,
+  .lineup-stats span,
+  .carousel-head span,
+  .spectrum-card > span,
+  .spectrum-card small,
+  .carousel-count,
+  .service-grid span,
+  footer p {
+    font-size: 11px;
+  }
+
+  .big-product {
+    min-height: 510px;
+  }
+
+  .flagship-visual {
+    height: 500px;
+  }
+
+  .tech-visual {
+    height: 400px;
+  }
+
+  .accordion-list summary {
+    min-height: 90px;
+  }
+
+  .service-grid article {
+    min-height: 205px;
+  }
+
+  .lineup-stats {
+    margin-bottom: 62px;
+  }
+
+  .spectrum-carousel {
+    margin-top: 48px;
+  }
+}
