@@ -103,9 +103,70 @@ searchInput?.addEventListener('keydown', (event) => {
   if (/(인삼|더덕|고추|가지|아스파라거스|비트|셀러리|작물)/.test(keyword)) target = '#applications';
   if (/(서비스|a\/s|as|설치|상담|도입)/.test(keyword)) target = '#service';
   if (/(문의|견적|가격)/.test(keyword)) target = '#support';
+  if (/(묘|기기|인삼|비트|아스파라거스|더덕|셀러리|우엉|스테비아|꽈리고추|청양고추|가지|시금치|콩|생강)/.test(keyword)) target = '#shop-lines';
 
   closeSearch();
   document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+});
+
+$$('[data-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('.spectrum-track');
+  const cards = [...carousel.querySelectorAll('.spectrum-card')];
+  const prev = carousel.querySelector('.carousel-arrow.prev');
+  const next = carousel.querySelector('.carousel-arrow.next');
+  const progress = carousel.querySelector('.carousel-progress i');
+  const count = carousel.querySelector('.carousel-count');
+  const category = carousel.dataset.category || '제품';
+
+  if (!track || !cards.length) return;
+
+  const pad = (number) => String(number).padStart(2, '0');
+  const getStep = () => {
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return cards[0].getBoundingClientRect().width + gap;
+  };
+
+  const updateCarousel = () => {
+    const step = getStep();
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    const ratio = maxScroll ? Math.min(1, Math.max(0, track.scrollLeft / maxScroll)) : 0;
+    const current = Math.min(cards.length, Math.max(1, Math.round(track.scrollLeft / step) + 1));
+    const base = 100 / cards.length;
+
+    if (progress) progress.style.width = `${base + ratio * (100 - base)}%`;
+    if (count) count.textContent = `${pad(current)} / ${pad(cards.length)}`;
+  };
+
+  prev?.addEventListener('click', () => {
+    track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+  });
+
+  next?.addEventListener('click', () => {
+    track.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+
+  let ticking = false;
+  track.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      updateCarousel();
+      ticking = false;
+    });
+  });
+
+  cards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const selected = $('#selectedProduct');
+      const product = card.dataset.product || card.querySelector('h4')?.textContent || '선택 상품';
+      if (selected) {
+        selected.hidden = false;
+        selected.textContent = `선택 상품 · ${category} · ${product}`;
+      }
+    });
+  });
+
+  updateCarousel();
 });
 
 window.addEventListener('scroll', () => {
