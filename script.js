@@ -8,6 +8,11 @@ borderGuard.rel = 'stylesheet';
 borderGuard.href = 'border-guard.css';
 document.head.appendChild(borderGuard);
 
+const typeScaleGuard = document.createElement('link');
+typeScaleGuard.rel = 'stylesheet';
+typeScaleGuard.href = 'type-scale-guard.css';
+document.head.appendChild(typeScaleGuard);
+
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
