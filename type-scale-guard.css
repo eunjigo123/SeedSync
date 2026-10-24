@@ -1,0 +1,78 @@
+/* Small-text scale guard: increase compact UI and supporting text by +5px. */
+
+/* Header and navigation */
+.desktop-nav a,
+.contact-link { font-size: 18px !important; }
+.menu-button { font-size: 17px !important; }
+.mobile-nav a { font-size: 19px !important; }
+
+/* Buttons and compact links */
+.button,
+.button-accent,
+.plain-link,
+.drawer-cta,
+.sticky-cta { font-size: 18px !important; }
+
+/* Eyebrows, labels and metadata */
+.hero-kicker,
+.eyebrow { font-size: 17px !important; }
+.hero-rail,
+.section-marker span,
+.section-marker b,
+.hero-machine-label b,
+.hero-machine-label span,
+.hero-metrics span,
+.media-index,
+.product-facts span,
+.value-number small,
+.technology-stats span,
+.flow-step span,
+.flow-step small,
+.system-controls span,
+.system-tags span,
+.crop-card span,
+.carousel-count,
+.field-grid span,
+.support-grid span,
+.updates-grid span { font-size: 22px !important; }
+
+/* Controls and accordion metadata */
+.value-tab { font-size: 20px !important; }
+.value-tab span,
+.accordion-list summary span { font-size: 16px !important; }
+.hero-machine-console span { font-size: 16px !important; }
+
+/* Compact supporting copy */
+.validation-status p,
+.validation-grid p,
+.field-grid p,
+.support-grid p,
+.updates-grid p,
+.contact-note { font-size: 21px !important; }
+.validation-status b,
+.validation-grid span,
+.validation-grid strong { font-size: 21px !important; }
+
+/* Form UI */
+.consult-form label > span { font-size: 19px !important; }
+.consult-form input,
+.consult-form select,
+.consult-form textarea { font-size: 21px !important; }
+#formStatus { font-size: 19px !important; }
+.selected-product { font-size: 20px !important; }
+
+/* Drawer and footer compact text */
+.product-drawer .eyebrow,
+.product-drawer dt,
+.product-drawer dd,
+.site-footer b,
+.site-footer a,
+.site-footer p { font-size: 16px !important; }
+
+@media (max-width: 760px) {
+  .desktop-nav a,
+  .contact-link { font-size: 18px !important; }
+  .mobile-nav a { font-size: 19px !important; }
+  .hero-kicker,
+  .eyebrow { font-size: 16px !important; }
+}
