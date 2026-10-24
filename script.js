@@ -18,6 +18,11 @@ textHierarchyGuard.rel = 'stylesheet';
 textHierarchyGuard.href = 'text-hierarchy-guard.css';
 document.head.appendChild(textHierarchyGuard);
 
+const designOverhaulStyle = document.createElement('link');
+designOverhaulStyle.rel = 'stylesheet';
+designOverhaulStyle.href = 'design-overhaul.css';
+document.head.appendChild(designOverhaulStyle);
+
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -205,3 +210,8 @@ consultForm?.addEventListener('submit', (event) => {
   consultForm.classList.add('validated');
   if (formStatus) formStatus.textContent = '입력 내용은 확인되었습니다. 현재 서버 전송 기능은 연결 전이므로 실제 문의가 전송되지는 않습니다.';
 });
+
+const designOverhaulScript = document.createElement('script');
+designOverhaulScript.src = 'design-overhaul.js';
+designOverhaulScript.defer = true;
+document.body.appendChild(designOverhaulScript);
