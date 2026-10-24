@@ -106,54 +106,54 @@ footer,
   min-height: 225px;
 }
 
-/* Compact text +3px */
+/* Compact text +5px total */
 .desktop-nav a,
 .contact-link {
-  font-size: 17px;
+  font-size: 19px;
 }
 
 .menu-button {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .button,
 .plain-link {
-  font-size: 17px;
+  font-size: 19px;
 }
 
 .hero-kicker,
 .eyebrow {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.05em;
 }
 
 .scroll-cue {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .hero-stage-label,
 .machine-console span {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
 .big-product-top {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .big-product-top b,
 .big-product-copy strong {
-  font-size: 17px;
+  font-size: 19px;
 }
 
 .flagship-title,
 .feature-strip span {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .value-tab {
-  font-size: 19px;
+  font-size: 21px;
 }
 
 .value-tab span,
@@ -168,7 +168,7 @@ footer,
 .carousel-count,
 .service-grid span,
 footer p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.55;
 }
 
@@ -215,13 +215,13 @@ footer p {
 
   .hero-kicker,
   .eyebrow {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .button,
   .plain-link,
   .mobile-nav a {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .hero-stage-label,
@@ -239,7 +239,7 @@ footer p {
   .carousel-count,
   .service-grid span,
   footer p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .big-product {
