@@ -3,6 +3,11 @@ paletteGuard.rel = 'stylesheet';
 paletteGuard.href = 'palette-guard.css';
 document.head.appendChild(paletteGuard);
 
+const borderGuard = document.createElement('link');
+borderGuard.rel = 'stylesheet';
+borderGuard.href = 'border-guard.css';
+document.head.appendChild(borderGuard);
+
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
