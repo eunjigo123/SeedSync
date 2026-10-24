@@ -6,6 +6,14 @@ document.head.appendChild(typographyLink);
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
+const heroStage = $('.hero-stage');
+const heroProductName = $('.hero-stage-label span');
+const flagshipProductName = $('.flagship-copy h2');
+
+if (heroStage) heroStage.setAttribute('aria-label', 'Seed Optima Bed product visualization');
+if (heroProductName) heroProductName.textContent = 'SEED OPTIMA BED';
+if (flagshipProductName) flagshipProductName.textContent = 'Seed Optima Bed';
+
 const mobileNav = $('#mobileNav');
 const menuOpen = $('#menuOpen');
 
