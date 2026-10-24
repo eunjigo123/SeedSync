@@ -1,19 +1,27 @@
-/* Border policy: header uses technology blue; every other border uses navy. */
+/* Border policy: header uses technology blue; every other visible border uses navy. */
 
 /* Header-only borders */
 .site-header,
-.site-header * {
+.site-header *,
+.site-header *::before,
+.site-header *::after {
   border-color: var(--blue) !important;
 }
 
-/* Every border below the header */
+/* Every border below the header. [class] raises specificity above later component rules. */
 main,
-main *,
+main *[class],
+main *[class]::before,
+main *[class]::after,
 .product-drawer,
-.product-drawer *,
+.product-drawer *[class],
+.product-drawer *[class]::before,
+.product-drawer *[class]::after,
 .drawer-backdrop,
 .sticky-cta,
 .site-footer,
-.site-footer * {
+.site-footer *[class],
+.site-footer *[class]::before,
+.site-footer *[class]::after {
   border-color: var(--navy) !important;
 }
