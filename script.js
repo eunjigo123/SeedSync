@@ -1,6 +1,62 @@
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
+// Palette correction for the Technology section.
+// #F5F7F4 is used as a background only, never as text.
+const technologyPalette = document.createElement('style');
+technologyPalette.textContent = `
+  .technology {
+    background: #F5F7F4;
+    color: #15324A;
+  }
+
+  .technology .section-kicker.light,
+  .technology .overline,
+  .technology .logic-row small,
+  .technology .logic-index,
+  .technology .logic-row > i {
+    color: #86B7C5;
+  }
+
+  .technology h2,
+  .technology .logic-row b {
+    color: #15324A;
+  }
+
+  .technology-copy > p:not(.overline),
+  .technology .logic-row p {
+    color: #5B7F63;
+  }
+
+  .technology .light-btn {
+    background: #15324A;
+    color: #86B7C5;
+  }
+
+  .technology .logic-panel {
+    background: #F5F7F4;
+    border-color: #86B7C5;
+  }
+
+  .technology .logic-row {
+    border-bottom-color: #86B7C5;
+  }
+
+  .technology .logic-note {
+    background: #86B7C5;
+  }
+
+  .technology .logic-note span {
+    background: #5B7F63;
+    box-shadow: 0 0 0 5px #86B7C5;
+  }
+
+  .technology .logic-note p {
+    color: #15324A;
+  }
+`;
+document.head.appendChild(technologyPalette);
+
 const header = $('#header');
 const mobileNav = $('#mobileNav');
 const menuOpen = $('#menuOpen');
