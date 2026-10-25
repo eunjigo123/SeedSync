@@ -47,6 +47,7 @@
 .dynamic-form input:focus,.dynamic-form select:focus,.dynamic-form textarea:focus{box-shadow:inset 0 0 0 2px var(--blue)}
 .dynamic-form .wide{grid-column:1/-1}
 .conditional-group{display:contents}
+.conditional-group[hidden]{display:none!important}
 .form-result{grid-column:1/-1;margin-top:8px;font-size:18px}
 .form-followups{display:none;grid-column:1/-1;gap:16px;margin-top:18px;padding-top:24px;border-top:var(--line) solid var(--navy)}
 .form-followups.show{display:flex;flex-wrap:wrap}
