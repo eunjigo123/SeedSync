@@ -42,370 +42,54 @@ h4,
 strong,
 b,
 .button,
-.plain-link,
+.text-link,
 .contact-link,
 .desktop-nav a,
 .mobile-nav a,
-.value-tab,
 .carousel-arrow,
-.accordion-list summary {
+.accordion summary {
   font-family: var(--font-display);
   font-weight: 400;
 }
 
 p,
 li,
-.accordion-list details p,
-.service-grid p {
+.accordion details p {
   font-family: var(--font-body);
   font-weight: 400;
 }
 
-/* Navigation */
-.brand {
-  font-size: 23px;
-  line-height: 1.2;
-  letter-spacing: -0.012em;
+/* Official SeedSync logo. The inline prototype SVG remains as a semantic fallback,
+   but the live brand lockup uses the repository's logo.png asset. */
+.brand .brand-symbol {
+  display: none !important;
 }
 
-.desktop-nav a,
-.contact-link {
-  font-size: 13px;
-  line-height: 1.4;
-  letter-spacing: 0.015em;
+.brand::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: block;
+  background: url('logo.png') center / contain no-repeat;
 }
 
-.menu-button {
-  font-family: var(--font-display);
-  font-size: 12px;
-  line-height: 1.4;
-  letter-spacing: 0.055em;
-}
-
-.button,
-.plain-link {
-  font-size: 13px;
-  line-height: 1.45;
-  letter-spacing: 0.005em;
-}
-
-/* Hero */
-.hero-kicker,
-.eyebrow {
-  font-family: var(--font-display);
-  font-size: 12px;
-  line-height: 1.5;
-  letter-spacing: 0.055em;
-}
-
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(60px, 7vw, 128px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-}
-
-.hero-bottom p {
-  font-size: 17px;
-  line-height: 1.82;
-  letter-spacing: 0;
-}
-
-.scroll-cue {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.4;
-  letter-spacing: 0.055em;
-}
-
-.hero-stage-label,
-.machine-console span {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.45;
-  letter-spacing: 0.045em;
-}
-
-/* Main section hierarchy */
-.section-heading h2,
-.flagship-copy h2,
-.lineup-heading h2,
-.contact h2 {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 5.2vw, 82px);
-  line-height: 1.12;
-  letter-spacing: -0.018em;
-}
-
-.split-heading > p,
-.flagship-copy > p:not(.eyebrow) {
-  font-size: 17px;
-  line-height: 1.82;
-  letter-spacing: 0;
-}
-
-.big-product-top {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.45;
-  letter-spacing: 0.05em;
-}
-
-.big-product-top b,
-.big-product-copy strong {
-  font-size: 13px;
-  line-height: 1.45;
-  letter-spacing: 0.005em;
-}
-
-.big-product-copy h3 {
-  font-size: clamp(36px, 3.5vw, 54px);
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-}
-
-.big-product-copy p {
-  font-size: 16px;
-  line-height: 1.82;
-  letter-spacing: 0;
-}
-
-.flagship-title,
-.feature-strip span {
-  font-family: var(--font-display);
-  font-size: 12px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-}
-
-/* Value */
-.value-tab {
-  font-size: 15px;
-  line-height: 1.55;
-  letter-spacing: 0;
-}
-
-.value-tab span {
-  font-size: 11px;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-}
-
-.metric strong {
-  font-family: var(--font-display);
-  font-size: clamp(72px, 9vw, 148px);
-  line-height: 0.96;
-  letter-spacing: -0.025em;
-}
-
-.metric small {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-}
-
-.value-copy h3 {
-  font-size: clamp(28px, 2.6vw, 36px);
-  line-height: 1.18;
-  letter-spacing: -0.012em;
-}
-
-.value-copy p {
-  font-size: 16px;
-  line-height: 1.82;
-  letter-spacing: 0;
-}
-
-.value-copy li {
-  font-size: 15px;
-  line-height: 1.65;
-  letter-spacing: 0;
-}
-
-/* Technology */
-.tech-copy h2 {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 5.2vw, 82px);
-  line-height: 1.12;
-  letter-spacing: -0.018em;
-}
-
-.tech-copy > p {
-  font-size: 17px;
-  line-height: 1.82;
-  letter-spacing: 0;
-}
-
-.tech-orbit b {
-  font-family: var(--font-display);
-  font-size: 26px;
-  line-height: 1.28;
-  letter-spacing: 0.01em;
-}
-
-.tech-orbit span,
-.tech-stats span {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: 0.045em;
-}
-
-.tech-stats strong {
-  font-family: var(--font-display);
-  font-size: 34px;
-  line-height: 1.08;
-  letter-spacing: -0.012em;
-}
-
-/* Accordion */
-.accordion-list summary span {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-}
-
-.accordion-list summary b {
-  font-size: 27px;
-  line-height: 1.35;
-  letter-spacing: -0.012em;
-}
-
-.accordion-list details p {
-  font-size: 16px;
-  line-height: 1.82;
-  letter-spacing: 0;
-}
-
-/* Lineup and carousel */
-.lineup-stats strong {
-  font-family: var(--font-display);
-  font-size: clamp(50px, 5.2vw, 78px);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.lineup-stats span,
-.carousel-head span,
-.spectrum-card > span,
-.spectrum-card small,
-.carousel-count {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: 0.045em;
-}
-
-.carousel-head h3 {
-  font-size: 40px;
-  line-height: 1.15;
-  letter-spacing: -0.012em;
-}
-
-.spectrum-card h4 {
-  font-size: 27px;
-  line-height: 1.3;
-  letter-spacing: -0.008em;
-}
-
-/* Preserve seedling/equipment carousel photography at 5:4. */
-.crop-card img {
-  width: 100%;
-  height: auto !important;
-  aspect-ratio: 5 / 4;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Service and contact */
-.service-grid span,
-footer p {
-  font-family: var(--font-display);
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: 0.045em;
-}
-
-.service-grid h3 {
-  font-size: 28px;
-  line-height: 1.3;
-  letter-spacing: -0.012em;
-}
-
-.service-grid p {
-  font-size: 16px;
-  line-height: 1.82;
-  letter-spacing: 0;
-}
-
-.selected-product {
-  font-size: 15px;
-  line-height: 1.7;
-  letter-spacing: 0;
-}
-
-@media (max-width: 1100px) {
-  .hero h1 {
-    font-size: 76px;
-    line-height: 1.1;
-  }
-  .mobile-nav a {
-    font-size: 14px;
-    line-height: 1.6;
-  }
+.site-footer .brand::before {
+  width: 58px;
+  height: 58px;
+  flex-basis: 58px;
 }
 
 @media (max-width: 760px) {
-  .brand { font-size: 20px; }
-
-  .hero h1 {
-    font-size: 48px;
-    line-height: 1.12;
-    letter-spacing: -0.015em;
+  .brand::before {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
   }
 
-  .hero-kicker,
-  .eyebrow {
-    font-size: 11px;
-    line-height: 1.5;
+  .site-footer .brand::before {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
   }
-
-  .hero-bottom p,
-  .split-heading > p,
-  .flagship-copy > p:not(.eyebrow),
-  .big-product-copy p,
-  .value-copy p,
-  .tech-copy > p,
-  .accordion-list details p,
-  .service-grid p {
-    font-size: 16px;
-    line-height: 1.82;
-  }
-
-  .section-heading h2,
-  .flagship-copy h2,
-  .lineup-heading h2,
-  .contact h2,
-  .tech-copy h2 {
-    font-size: 42px;
-    line-height: 1.14;
-    letter-spacing: -0.012em;
-  }
-
-  .big-product-copy h3 {
-    font-size: 36px;
-    line-height: 1.16;
-    letter-spacing: -0.01em;
-  }
-
-  .metric strong { font-size: 76px; }
-  .value-copy h3 { font-size: 29px; line-height: 1.22; }
-  .accordion-list summary b { font-size: 22px; line-height: 1.4; }
-  .carousel-head h3 { font-size: 32px; line-height: 1.18; }
-  .spectrum-card h4 { font-size: 25px; }
-  .service-grid h3 { font-size: 26px; }
-  .machine-console span { font-size: 10px; }
-  footer p { font-size: 11px; }
 }
