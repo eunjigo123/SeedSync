@@ -61,9 +61,14 @@
 </nav>
 
 <main id="home">
-  <section class="hero" id="hero" data-section="home">
+  <section class="hero hero-cinematic" id="hero" data-section="home">
+    <!-- Temporary royalty-free greenhouse photo; replace with a genuine SeedSync field/product photo when available. -->
+    <div class="hero-product hero-background" id="heroProduct" aria-hidden="true">
+      <img class="hero-background-image" src="https://images.unsplash.com/photo-1775681150283-04970adf1b98?auto=format&amp;fit=crop&amp;w=2400&amp;q=82" alt="" fetchpriority="high" decoding="async">
+    </div>
+
     <div class="hero-copy reveal">
-      <p class="eyebrow">SEEDOPTIMA BED</p>
+      <p class="eyebrow">SEED OPTIMA BED</p>
       <h1>작물에 맞는 환경,<br><span>자동으로 완성하다.</span></h1>
       <p class="hero-lead">복잡한 스마트팜이 아니어도,<br>작물에 필요한 환경을 자동으로 맞출 수 있도록 설계했습니다.</p>
       <div class="hero-actions">
@@ -72,35 +77,9 @@
       </div>
     </div>
 
-    <div class="hero-product reveal" id="heroProduct" aria-label="Seed Optima Bed technical illustration">
-      <svg class="machine-svg" viewBox="0 0 1200 720" role="img" aria-labelledby="machineTitle">
-        <title id="machineTitle">Seed Optima Bed 기술 일러스트</title>
-        <path class="frame" d="M250 155 310 80h580l60 75"/>
-        <rect class="frame" x="220" y="155" width="760" height="420" rx="4"/>
-        <line class="shelf" x1="270" y1="315" x2="930" y2="315"/>
-        <line class="shelf" x1="270" y1="455" x2="930" y2="455"/>
-        <g>
-          <rect class="pot" x="315" y="255" width="78" height="60"/><rect class="pot" x="450" y="255" width="78" height="60"/><rect class="pot" x="585" y="255" width="78" height="60"/><rect class="pot" x="720" y="255" width="78" height="60"/>
-          <path class="plant" d="M354 255c-7-36 10-55 29-58-1 25-10 43-29 58ZM354 255c-28-14-36-35-33-51 24 5 36 23 33 51Z"/>
-          <path class="plant" d="M489 255c-7-34 9-53 27-56-1 24-9 41-27 56ZM489 255c-26-13-34-33-31-49 22 5 34 22 31 49Z"/>
-          <path class="plant" d="M624 255c-7-36 10-55 29-58-1 25-10 43-29 58ZM624 255c-28-14-36-35-33-51 24 5 36 23 33 51Z"/>
-          <path class="plant" d="M759 255c-7-34 9-53 27-56-1 24-9 41-27 56ZM759 255c-26-13-34-33-31-49 22 5 34 22 31 49Z"/>
-        </g>
-        <g>
-          <rect class="pot" x="315" y="395" width="78" height="60"/><rect class="pot" x="450" y="395" width="78" height="60"/><rect class="pot" x="585" y="395" width="78" height="60"/><rect class="pot" x="720" y="395" width="78" height="60"/>
-        </g>
-        <rect class="frame thin" x="310" y="500" width="520" height="48"/>
-        <circle class="node" cx="350" cy="524" r="9"/><circle class="node" cx="480" cy="524" r="9"/><circle class="node" cx="610" cy="524" r="9"/><circle class="node" cx="740" cy="524" r="9"/>
-        <path class="node-line thin" d="M350 515V470M480 515V470M610 515V470M740 515V470"/>
-        <circle class="frame thin" cx="895" cy="365" r="48"/>
-        <path class="frame thin fan-blades" d="M895 326c22 4 29 17 20 30-8 11-18 12-26 9M934 365c-4 22-17 29-30 20-11-8-12-18-9-26M895 404c-22-4-29-17-20-30 8-11 18-12 26-9M856 365c4-22 17-29 30-20 11 8 12 18 9 26"/>
-        <text x="308" y="620">SEED OPTIMA BED</text>
-      </svg>
-    </div>
-
     <div class="hero-bottomline reveal">
       <span>SOIL BASED · HARDWARE CONTROL · AUTOMATED NURSERY</span>
-      <a class="scroll-cue" href="#problem">SCROLL ↓</a>
+      <a class="scroll-cue" href="#problem" aria-label="아래로 스크롤하여 자세히 보기">SCROLL ↓</a>
     </div>
   </section>
 
