@@ -466,7 +466,7 @@ dialog{border:var(--line) solid var(--navy);padding:0;background:var(--paper);co
   overflow:hidden
 }
 .hero.hero-cinematic .hero-background{
-  position:absolute;inset:0;z-index:-1;
+  position:absolute;inset:0;z-index:0;
   width:100%;min-height:0;margin:0;padding:0;
   display:block;overflow:hidden;pointer-events:none;
   isolation:auto
@@ -479,10 +479,10 @@ dialog{border:var(--line) solid var(--navy);padding:0;background:var(--paper);co
   filter:saturate(.74) contrast(1.1);
 }
 .hero.hero-cinematic::after{
-  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(0deg,rgba(9,19,30,.96) 0%,rgba(9,19,30,.75) 25%,rgba(9,19,30,.14) 75%),
-    linear-gradient(90deg,rgba(9,19,30,.68) 0%,rgba(9,19,30,.3) 48%,rgba(9,19,30,.26) 100%)
+    linear-gradient(0deg,rgba(9,19,30,.63) 0%,rgba(9,19,30,.27) 38%,rgba(9,19,30,0) 82%),
+    linear-gradient(90deg,rgba(9,19,30,.28) 0%,rgba(9,19,30,.08) 60%,rgba(9,19,30,0) 100%)
 }
 .hero.hero-cinematic .hero-copy{
   z-index:2;align-self:stretch;max-width:var(--editorial-width);
@@ -542,7 +542,7 @@ dialog{border:var(--line) solid var(--navy);padding:0;background:var(--paper);co
   }
   .hero.hero-cinematic .hero-background-image{object-position:55% center}
   .hero.hero-cinematic::after{
-    background:linear-gradient(0deg,rgba(9,19,30,.97) 0%,rgba(9,19,30,.76) 35%,rgba(9,19,30,.28) 100%)
+    background:linear-gradient(0deg,rgba(9,19,30,.73) 0%,rgba(9,19,30,.37) 43%,rgba(9,19,30,.06) 100%)
   }
   .hero.hero-cinematic .hero-copy{margin-bottom:10px}
   .hero.hero-cinematic .eyebrow{font-size:17px;letter-spacing:.16em;margin-bottom:20px}
