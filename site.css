@@ -227,3 +227,221 @@ dialog{border:var(--line) solid var(--navy);padding:0;background:var(--paper);co
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.machine-svg,.product-media img,.problem-icon,.feature-layer,.story-track{transition:none}.sensor-nodes circle,.signal-line,.action-line,.fan-rotor{animation:none!important}}
+
+
+/* SeedSync ORBIT-inspired editorial visual refinement | CSS only; all JS hooks preserved */
+:root{--editorial-width:1320px}
+
+/* Editorial width system: keep section backgrounds full-bleed and contents aligned. */
+:is(.products,.field-proof,.field-stories,.lab,.about).section > *{
+  width:100%;max-width:var(--editorial-width);margin-left:auto;margin-right:auto
+}
+:is(.crop-section) > :is(.crop-head,.crop-data-panel,.crop-track,.carousel-footer),
+:is(.value-layout,.rental-layout,.farm-tech-layout,.how-layout){
+  width:100%;max-width:var(--editorial-width);margin-left:auto;margin-right:auto
+}
+.section-head{
+  grid-template-columns:minmax(0,1fr) minmax(290px,.63fr);
+  gap:clamp(38px,7vw,108px);align-items:end;margin-bottom:clamp(42px,5vw,68px)
+}
+.section-head > div{min-width:0}
+.section-head > p{align-self:end;padding-bottom:5px;max-width:480px}
+.section-kicker{display:flex;align-items:center;gap:13px}
+.section-kicker::before{content:"";flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.65}
+.section-title,.crop-title,.card-title{max-width:100%;text-wrap:balance}
+.section-head p,.problem-intro p:last-child,.product-copy p,.story-copy p{word-break:keep-all}
+
+/* Header remains transparent on hero and paper after scrolling, with blue header borders. */
+.site-header{padding-inline:clamp(20px,3.4vw,56px);gap:clamp(20px,3vw,44px)}
+.desktop-nav{gap:clamp(16px,2vw,32px)}
+.site-header .contact-link{
+  height:auto;min-height:48px;padding:8px 18px;align-self:center;
+  border:var(--line) solid var(--blue);
+  transition:background .2s ease,color .2s ease
+}
+.site-header .contact-link:hover,.site-header .contact-link:focus-visible{background:var(--blue);color:var(--navy)}
+.mega-menu{box-shadow:0 25px 65px rgba(21,50,74,.18)}
+
+/* Hero: ORBIT's image-led hierarchy, adapted to the existing Seed Optima Bed SVG. */
+.hero{
+  grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr);
+  column-gap:clamp(28px,4vw,72px);isolation:isolate
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(21,50,74,.72) 0%,rgba(21,50,74,.15) 62%,transparent 100%)
+}
+.hero-copy{align-self:end;padding-bottom:clamp(36px,6vh,90px);max-width:770px}
+.hero-product{z-index:1;min-width:0}
+.hero-product::before{
+  inset:9% -6% 6%;background-image:
+  radial-gradient(circle at 54% 48%,rgba(53,174,209,.19),transparent 54%),
+  linear-gradient(rgba(53,174,209,.065) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(53,174,209,.065) 1px,transparent 1px)
+}
+.hero-bottomline{z-index:2;position:relative;max-width:var(--editorial-width);width:100%;margin-inline:auto;padding-top:18px}
+.hero-actions .button{min-width:240px}
+.hero .text-link{align-self:center}
+
+/* Problem: asymmetric editorial opening instead of stacked title-and-copy. */
+.problem-intro{
+  width:calc(100% - 2*var(--pad-x));max-width:var(--editorial-width);
+  margin:0 auto;padding-inline:0;
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  grid-template-rows:auto auto;column-gap:clamp(46px,8vw,130px);
+  align-content:center;align-items:start;min-height:78vh
+}
+.problem-intro .section-kicker{grid-column:1;grid-row:1;margin-bottom:22px}
+.problem-intro .section-title{grid-column:1;grid-row:2}
+.problem-intro p:last-child{grid-column:2;grid-row:2;align-self:end;margin:0;max-width:630px}
+.problem-copy{padding-left:clamp(0px,2vw,26px)}
+.problem-visual svg{max-width:500px}
+
+/* Product feature composition: quiet space around strong visuals, clear arrow affordance. */
+.product-split{gap:clamp(16px,1.6vw,24px)}
+.product-choice{gap:26px}
+.product-media{background:var(--paper);isolation:isolate}
+.product-system-media{background:
+  radial-gradient(circle at 55% 40%,rgba(21,50,74,.08),transparent 60%),var(--paper)}
+.product-copy{gap:16px 22px;padding:2px 2px 0;align-items:center}
+.product-copy p{max-width:620px}
+.product-arrow{
+  width:58px;height:58px;border:var(--line) solid var(--navy);border-radius:50%;
+  display:grid;place-items:center;background:var(--paper);color:var(--navy);
+  transition:background .25s ease,color .25s ease,transform .25s ease
+}
+.product-choice:hover .product-arrow,.product-choice:focus-within .product-arrow{
+  background:var(--navy);color:var(--paper);transform:translate(2px,-2px)
+}
+.hotspot-panel{box-shadow:0 10px 28px rgba(21,50,74,.14)}
+
+/* Technology: make hardware the hero, allow the scroll-copy to read as an editorial list. */
+.farm-tech-layout,.how-layout{gap:clamp(38px,5.5vw,100px)}
+.farm-tech-stage,.how-stage{min-width:0}
+.farm-machine-wrap{position:relative}
+.farm-machine-wrap::before{
+  content:"";position:absolute;inset:25% 8% 10%;
+  background:radial-gradient(ellipse at center,rgba(53,174,209,.10),transparent 68%);
+  pointer-events:none
+}
+.farm-tech-steps,.how-steps{min-width:0}
+.farm-tech-step h3,.how-steps h3{max-width:620px}
+.value-layout,.rental-layout{gap:clamp(38px,6vw,100px)}
+.value-step-card{border-bottom:0;padding:36px 0 58px}
+
+/* Crop library: 5:4 images, clear information beneath and a consistent arrow symbol. */
+.crop-head{gap:clamp(24px,4vw,60px)}
+.crop-summary{max-width:420px}
+.crop-data-panel{padding-block:34px;gap:clamp(30px,6vw,90px)}
+.crop-card img{aspect-ratio:5/4;object-fit:cover}
+.crop-card h4::after{
+  flex:0 0 48px;width:48px;height:48px;
+  display:grid;place-items:center;border:var(--line) solid var(--navy);
+  border-radius:50%;background:var(--paper);color:var(--navy);
+  font-size:27px;transition:background .25s ease,color .25s ease,transform .25s ease
+}
+.crop-card:hover h4::after,.crop-card:focus-visible h4::after{
+  background:var(--navy);color:var(--paper);transform:translate(2px,-2px)
+}
+.crop-section .carousel-controls{align-items:center}
+.crop-section .carousel-arrow{background:var(--paper);color:var(--navy);border:var(--line) solid var(--navy);border-radius:0}
+.crop-section .carousel-arrow:hover,.crop-section .carousel-arrow:focus-visible{
+  background:var(--navy);color:var(--paper)
+}
+.crop-section.seedling .seedling-carousel-controls .carousel-arrow{
+  background:var(--paper);color:var(--navy);border-color:var(--navy)
+}
+.crop-section.seedling .seedling-carousel-controls .carousel-arrow:hover,
+.crop-section.seedling .seedling-carousel-controls .carousel-arrow:focus-visible{
+  background:var(--navy);color:var(--paper)
+}
+
+/* ORBIT-inspired impactful numbers, without introducing invented achievements. */
+.proof-numbers{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(24px,3.5vw,52px);
+  background:var(--navy);color:var(--paper);
+  padding:clamp(36px,5vw,70px);margin-top:65px;margin-bottom:70px
+}
+.proof-stat{min-width:0;border:0;color:var(--paper);padding:8px 0;background:transparent;transition:transform .2s ease}
+.proof-stat:hover,.proof-stat:focus-visible{transform:translateY(-4px)}
+.proof-stat:focus-visible{outline:var(--line) solid var(--paper);outline-offset:7px}
+.proof-stat p{color:var(--paper);max-width:350px}
+.proof-target{gap:clamp(24px,4vw,64px)}
+.validation-track{margin-top:85px}
+
+/* Field Stories and Lab: give images and captions distinct editorial roles. */
+.story-slide{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,6vw,94px)}
+.story-visual{min-height:560px;background:
+  radial-gradient(circle at 70% 36%,rgba(57,185,116,.16),transparent 44%),var(--navy)}
+.story-visual::before,.story-visual::after{display:none}
+.story-copy{max-width:560px}
+.story-copy h3{margin-top:16px}
+.story-controls button{
+  border:var(--line) solid var(--navy);background:var(--paper);color:var(--navy);
+  transition:background .2s ease,color .2s ease
+}
+.story-controls button:hover,.story-controls button:focus-visible{background:var(--navy);color:var(--paper)}
+.lab-grid{grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);gap:clamp(28px,4vw,58px)}
+.lab-list{gap:26px}
+.lab-card{grid-template-columns:minmax(160px,220px) minmax(0,1fr);gap:24px;align-items:start}
+.lab-card + .lab-card{padding-top:25px;border-top:var(--line) solid var(--navy)}
+.lab-card .lab-thumb{width:100%}
+.lab-thumb{background:
+  radial-gradient(circle at 72% 35%,rgba(53,174,209,.21),transparent 42%),var(--navy)}
+.lab-thumb::before{inset:17%;border:0;background:
+  linear-gradient(130deg,transparent 49%,rgba(53,174,209,.36) 50%,transparent 51%)}
+.lab-thumb::after{border:0;background:rgba(53,174,209,.11)}
+.lab-feature p,.lab-card p{max-width:610px}
+
+/* About and the ending: visual confidence comes from layout, not extra boxes. */
+.about-panels article{padding:clamp(26px,3vw,48px)}
+.about-panels svg{width:140px;height:140px}
+.final-cta::before{
+  background-image:radial-gradient(circle at 86% 26%,rgba(53,174,209,.18),transparent 39%);
+  transform:none
+}
+.final-cta-inner{
+  max-width:var(--editorial-width);width:100%;
+  display:grid;grid-template-columns:minmax(0,1.38fr) minmax(290px,.62fr);
+  column-gap:clamp(35px,7vw,110px);align-items:end
+}
+.final-cta-inner > .section-kicker,.final-cta-inner > .section-title{grid-column:1}
+.final-cta-inner > .section-title{max-width:950px}
+.final-cta-inner > p:not(.section-kicker){grid-column:2;grid-row:2;align-self:end;margin-bottom:4px}
+.contact-actions{grid-column:1;grid-row:3;margin-top:44px}
+.partner-cta{grid-column:1/-1;grid-row:4;margin-top:90px;max-width:100%}
+.site-footer{column-gap:clamp(18px,3vw,50px)}
+
+/* Tablet: stop asymmetry before any title or controls get squeezed. */
+@media(max-width:1100px){
+  .section-head{grid-template-columns:1fr;gap:24px}
+  .section-head > p{max-width:720px}
+  .problem-intro{display:flex;flex-direction:column;align-items:flex-start;gap:20px;min-height:70vh}
+  .problem-intro p:last-child{margin-top:10px}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{align-self:center;padding-bottom:15px}
+  .hero-product{min-height:500px}
+  .farm-tech-layout,.how-layout,.value-layout,.rental-layout{gap:30px}
+  .story-slide{grid-template-columns:1fr}
+  .final-cta-inner{display:block}
+  .final-cta-inner > p:not(.section-kicker){max-width:800px;margin-top:28px}
+  .partner-cta{margin-top:68px}
+  .lab-grid{grid-template-columns:1fr}
+  .proof-numbers{gap:30px}
+}
+@media(max-width:760px){
+  .hero-copy{padding-bottom:0}
+  .hero-product{min-height:400px}
+  .section-head{margin-bottom:42px}
+  .product-arrow{width:48px;height:48px}
+  .crop-head{display:flex;flex-wrap:wrap}
+  .crop-section.seedling .seedling-carousel-controls{margin-left:auto}
+  .crop-card h4::after{width:44px;height:44px;flex-basis:44px}
+  .proof-numbers{grid-template-columns:1fr;gap:20px;padding:30px 25px}
+  .proof-stat{padding:13px 0}
+  .proof-stat:not(:last-child){border-bottom:var(--line) solid var(--navy)}
+  .lab-card{grid-template-columns:1fr}
+  .lab-card .lab-thumb{aspect-ratio:5/4}
+  .final-cta-inner{max-width:100%}
+}
