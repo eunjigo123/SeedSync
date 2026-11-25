@@ -609,10 +609,8 @@ dialog{border:var(--line) solid var(--navy);padding:0;background:var(--paper);co
 .photo-slot--premium .photo-slot-top span:first-child{background:var(--paper);color:var(--navy)}
 .photo-slot--premium .photo-slot-center .photo-slot-cross{color:var(--navy)}
 .photo-slot--detail{min-height:clamp(260px,26vw,375px);--slot-base:var(--paper)}
-.photo-slot--irrigation{min-height:clamp(590px,56vw,810px);--slot-base:#E9F1F0}
+.photo-slot--irrigation{min-height:clamp(590px,56vw,810px);--slot-base:var(--paper)}
 .photo-slot--proof{min-height:clamp(380px,38vw,545px)}
-.photo-slot--proof.photo-slot--whole{min-height:530px}
-.photo-slot--proof.photo-slot--inside{min-height:430px}
 
 /* 01 / Flagship. One oversized product-photo slot with an editorial title. */
 .flagship-section{
