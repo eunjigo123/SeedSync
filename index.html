@@ -63,10 +63,9 @@
 
 <main id="home">
   <section class="hero hero-cinematic" id="hero" data-section="home">
-    <!-- SeedSync Hero animation hosted in this repository. -->
+    <!-- Hero MP4 with navy background fallback; GIF is not loaded. -->
     <div class="hero-product hero-background" id="heroProduct" aria-hidden="true">
-      <img class="hero-background-image" src="2stest.gif" alt="" fetchpriority="high" decoding="async">
-      <video class="hero-background-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" oncanplay="this.classList.add('is-ready');this.play().catch(()=>{});" onerror="this.classList.remove('is-ready')">
+      <video class="hero-background-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
         <source src="main.mp4" type="video/mp4">
       </video>
     </div>
@@ -134,10 +133,10 @@
     </div>
   </section>
 
-  <!-- Mid-page cinematic video; loads only when approaching this section. -->
+  <!-- Mid-page cinematic video; source is loaded near viewport. -->
   <section class="seed-video-break" aria-label="SeedSync 영상 소개">
-    <video class="seed-video-break-media" autoplay muted loop playsinline preload="none" aria-label="SeedSync 제품 및 기술 소개 영상" poster="2stest.gif">
-      <source src="middle.mp4" type="video/mp4">
+    <video class="seed-video-break-media" muted loop playsinline preload="none" aria-label="SeedSync 제품 및 기술 소개 영상">
+      <source data-src="middle.mp4" type="video/mp4">
     </video>
     <div class="seed-video-break-caption">
       <span>SEEDSYNC · SMART GROWING</span>
@@ -418,5 +417,6 @@
   <p class="footer-copy">© 2026 SeedSync</p>
 </footer>
 <script src="script.js"></script>
+<script src="video-playback.js"></script>
 </body>
 </html>
