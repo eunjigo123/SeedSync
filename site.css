@@ -555,3 +555,118 @@ dialog{border:var(--line) solid var(--navy);padding:0;background:var(--paper);co
 @media(prefers-reduced-motion:reduce){
   .hero.hero-cinematic .hero-background-image{transform:none}
 }
+
+
+/* 2026 SeedSync Flagship / Carbon-inspired product story; isolated from media and carousel CSS */
+.flagship-section{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:100svh;padding:clamp(100px,10vw,170px) var(--pad-x) clamp(50px,6vw,96px);
+  color:var(--paper);background:var(--navy)
+}
+.flagship-section::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 79% 34%,rgba(53,174,209,.15),transparent 46%);
+}
+.flagship-section::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(53,174,209,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(53,174,209,.055) 1px,transparent 1px);
+  background-size:96px 96px;mask-image:linear-gradient(90deg,transparent 8%,#000 78%);
+}
+.flagship-shell{
+  width:100%;max-width:1320px;margin:0 auto;min-height:calc(100svh - 250px);
+  display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+  grid-template-rows:1fr auto;gap:clamp(30px,4vw,68px);align-items:center
+}
+.flagship-copy{position:relative;z-index:2;padding:16px 0}
+.flagship-copy .section-kicker{
+  margin:0 0 clamp(24px,4vw,48px);font-size:18px;
+  color:var(--paper);letter-spacing:.13em
+}
+.flagship-title{
+  font-family:var(--font-display);font-size:clamp(54px,5.2vw,92px);
+  line-height:1.12;letter-spacing:-.028em;word-break:keep-all;
+  max-width:850px
+}
+.flagship-title span{color:var(--blue)}
+.flagship-lead{
+  font-size:clamp(21px,1.85vw,25px);line-height:1.67;letter-spacing:-.008em;
+  max-width:650px;margin:clamp(28px,3.6vw,50px) 0 0;color:var(--paper)
+}
+.flagship-detail{max-width:610px;margin:16px 0 0;color:var(--paper);opacity:.83;font-size:20px}
+.flagship-link{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:34px;
+  max-width:100%;margin-top:clamp(28px,3.4vw,48px);
+  padding:17px 21px;background:var(--paper);color:var(--navy);
+  font-family:var(--font-display);font-size:19px;line-height:1.45;
+  transition:background .2s ease,transform .2s ease
+}
+.flagship-link:hover,.flagship-link:focus-visible{background:var(--blue);transform:translateY(-3px)}
+.flagship-link span{font-size:28px}
+.flagship-diagram{position:relative;min-width:0;width:100%;aspect-ratio:1.1;display:grid;place-items:center}
+.flagship-diagram::before{
+  content:"";position:absolute;width:94%;aspect-ratio:1;left:3%;top:50%;transform:translateY(-50%);
+  border-radius:50%;background:radial-gradient(circle at center,rgba(53,174,209,.12),transparent 65%);
+  pointer-events:none
+}
+.flagship-diagram svg{position:relative;width:100%;max-width:800px;overflow:visible;filter:drop-shadow(0 25px 25px rgba(2,17,30,.12))}
+.flagship-diagram .diagram-frame,.flagship-diagram .diagram-wire,
+.flagship-diagram .diagram-soil,.flagship-diagram .diagram-root,
+.flagship-diagram .diagram-leaf,.flagship-diagram .diagram-controller,
+.flagship-diagram .diagram-fan{
+  fill:none;stroke:var(--blue);stroke-width:4;stroke-linecap:round;stroke-linejoin:round
+}
+.flagship-diagram .diagram-frame{stroke-width:6}
+.flagship-diagram .diagram-wire{stroke-width:3;stroke-dasharray:11 9;opacity:.74}
+.flagship-diagram .diagram-soil{fill:rgba(53,174,209,.065);stroke-width:3}
+.flagship-diagram .diagram-root{stroke-width:2.5;opacity:.75}
+.flagship-diagram .diagram-leaf{fill:rgba(53,174,209,.16);stroke-width:3}
+.flagship-diagram .diagram-controller{fill:rgba(53,174,209,.09)}
+.flagship-diagram .diagram-node{fill:var(--blue)}
+.flagship-diagram .flagship-annotations text{
+  fill:var(--paper);font-family:var(--font-display);font-size:17px;letter-spacing:.035em
+}
+.flagship-figure-label{
+  position:absolute;left:4%;right:4%;bottom:0;display:flex;justify-content:space-between;
+  gap:20px;color:var(--paper);font-family:var(--font-display);
+  font-size:17px;letter-spacing:.075em
+}
+.flagship-figure-label span{font-size:16px;opacity:.72}
+.flagship-specs{
+  grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(26px,4vw,62px);padding-top:38px;position:relative
+}
+.flagship-specs::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:rgba(245,247,244,.32)
+}
+.flagship-specs div{min-width:0;display:flex;flex-direction:column;gap:10px}
+.flagship-specs strong{font-family:var(--font-display);font-size:clamp(22px,2.35vw,34px);line-height:1.2;color:var(--paper)}
+.flagship-specs span{font-size:18px;line-height:1.6;opacity:.85}
+@media(max-width:1100px){
+  .flagship-shell{min-height:auto;grid-template-columns:1fr;grid-template-rows:auto}
+  .flagship-copy{max-width:860px}
+  .flagship-title{font-size:clamp(56px,7vw,82px)}
+  .flagship-diagram{max-width:800px;margin:0 auto;aspect-ratio:1.3}
+  .flagship-figure-label{bottom:-8px}
+  .flagship-specs{grid-column:1}
+}
+@media(max-width:760px){
+  .flagship-section{min-height:0;padding:85px 20px 70px}
+  .flagship-shell{gap:32px}
+  .flagship-copy .section-kicker{font-size:17px;margin-bottom:22px}
+  .flagship-title{font-size:clamp(42px,10vw,62px);line-height:1.14}
+  .flagship-lead{font-size:20px;line-height:1.68;margin-top:28px}
+  .flagship-detail{font-size:19px;line-height:1.68}
+  .flagship-link{font-size:18px;width:100%;padding:14px 17px}
+  .flagship-diagram{aspect-ratio:1.05;max-width:100%}
+  .flagship-diagram svg{max-width:100%}
+  .flagship-diagram .flagship-annotations text{font-size:18px}
+  .flagship-figure-label{font-size:14px;bottom:-6px}
+  .flagship-figure-label span{font-size:13px}
+  .flagship-specs{grid-template-columns:1fr;gap:20px;padding-top:30px}
+  .flagship-specs strong{font-size:26px}
+  .flagship-specs span{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){
+  .flagship-link{transition:none}
+}
