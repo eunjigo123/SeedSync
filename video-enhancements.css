@@ -1,4 +1,4 @@
-/* SeedSync video sections. Keep original hero GIF as a fallback until video can play. */
+/* SeedSync video sections. Use lightweight navy fallback without loading the old GIF. */
 .hero.hero-cinematic .hero-background-video{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   object-position:center 53%;opacity:0;transition:opacity .7s ease;
