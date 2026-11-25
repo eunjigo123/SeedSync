@@ -6,7 +6,7 @@
 }
 .hero.hero-cinematic .hero-background-video.is-ready{opacity:1}
 .seed-video-break{
-  position:relative;min-height:clamp(380px,65svh,780px);
+  position:relative;height:calc(100svh - 78px);min-height:calc(100svh - 78px);width:100%;
   background:#15324A;overflow:hidden;isolation:isolate;color:#fff;
 }
 .seed-video-break-media{
@@ -25,7 +25,7 @@
 .seed-video-break-caption p{margin:16px 0 0;font-size:clamp(28px,4.3vw,66px);font-weight:700;line-height:1.18;word-break:keep-all}
 @media(max-width:760px){
   .hero.hero-cinematic .hero-background-video{object-position:55% center}
-  .seed-video-break{min-height:55svh}
+  .seed-video-break{height:calc(100svh - 68px);min-height:calc(100svh - 68px)}
 }
 @media(prefers-reduced-motion:reduce){
   .hero.hero-cinematic .hero-background-video{transition:none}
