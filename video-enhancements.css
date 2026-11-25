@@ -1,0 +1,32 @@
+/* SeedSync video sections. Keep original hero GIF as a fallback until video can play. */
+.hero.hero-cinematic .hero-background-video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center 53%;opacity:0;transition:opacity .7s ease;
+  filter:saturate(.74) contrast(1.1);pointer-events:none;
+}
+.hero.hero-cinematic .hero-background-video.is-ready{opacity:1}
+.seed-video-break{
+  position:relative;min-height:clamp(380px,65svh,780px);
+  background:#15324A;overflow:hidden;isolation:isolate;color:#fff;
+}
+.seed-video-break-media{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center;background:#15324A;
+}
+.seed-video-break::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(9,19,30,.7),rgba(9,19,30,.04) 72%);
+}
+.seed-video-break-caption{
+  position:absolute;z-index:1;left:max(24px,5vw);bottom:clamp(28px,5vw,72px);
+  max-width:900px;text-shadow:0 2px 16px rgba(0,0,0,.28);
+}
+.seed-video-break-caption span{font-size:clamp(12px,1.2vw,16px);letter-spacing:.22em;color:#9bdff1}
+.seed-video-break-caption p{margin:16px 0 0;font-size:clamp(28px,4.3vw,66px);font-weight:700;line-height:1.18;word-break:keep-all}
+@media(max-width:760px){
+  .hero.hero-cinematic .hero-background-video{object-position:55% center}
+  .seed-video-break{min-height:55svh}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero.hero-cinematic .hero-background-video{transition:none}
+}
